@@ -21,7 +21,7 @@ install_dep () {
 script_init () {
         while true
         do
-        read -p "Welcome to KAARBS (Kojiros Automated Arch Ricing Bash Script). This script will install all of my preferred packages/configs (with a prompt before each one so you can choose which ones you want). Before running this script, please make sure your system is completely up to date. Also, as a final disclaimer, the option to install my custom configs is still not ready for public use, so please skip it for now. Y to proceed, N to exit, or S to skip ahead if re-running script [y/n/s]" yn
+        read -p "Welcome to KAARBS (Kojiros Automated Arch Ricing Bash Script). This script will install all of my preferred packages/configs (with a prompt before each one so you can choose which ones you want). Before running this script, please make sure your system is completely up to date. Y to proceed, N to exit, or S to skip ahead if re-running script. [y/n/s]" yn
 
         case $yn
         in [yY] ) echo installing dependencies...;
@@ -132,7 +132,7 @@ install_awesomewm () {
 confirm_awesomewm () {
 	while true
 	do
-	read -p "would you like to install awesomeWM - the floating/tiling window manager? [y/n]" yn
+	read -p "would you like to install awesomeWM - the dynamic window manager? [y/n]" yn
 
         case $yn in
 	[yY] ) echo installing awesomeWM...;
@@ -143,7 +143,8 @@ confirm_awesomewm () {
 done
 }	
 
-# This will be updated eventually for public use. (copies my configs and themes over)
+# Copies my configs and themes over
+
 install_configs () {
 # Clones the repo of my custom configs/wm theme.
     cd ~/;
