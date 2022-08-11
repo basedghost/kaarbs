@@ -20,5 +20,6 @@ https://github.com/basedghost/dotfiles/
 
 Here's a couple of things you might want to do after using kaarbs:
 - If you'd like to use the custom sudo lecture, use `sudo visudo` to add the lines `"Defaults lecture=always"` and `"Defaults lecture_file=~/lecture"`
-- If you installed Steam and would like to use Proton-GE, 
+- If you'd like to use animated cursors, use the program lxappearance to choose between them.
+- If you installed Steam and would like to use Proton-GE, download the latest release [here](https://github.com/GloriousEggroll/proton-ge-custom/releases/tag/GE-Proton7-29) and extract it to this path: `~/.local/share/Steam/compatibilitytools.d/`
 - If you installed virt-manager, you must edit your `/etc/libvirt/libvirtd.conf` and uncomment `unix_sock_group` `unix_sock_ro_perms` and `unix_sock_rw_perms`. Then `sudo usermod -aG libvirt $(whoami)` and reboot.
