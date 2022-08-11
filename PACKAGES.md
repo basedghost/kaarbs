@@ -5,7 +5,6 @@ For those of you wondering what the script gives you the choice of installing, h
 - rsync
 - noto-fonts, noto-fonts-cjk, noto-fonts-emoji
 - terminus-font
-- aria2
 - pacman-contrib
 - arandr
 - nvidia-settings
