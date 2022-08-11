@@ -59,6 +59,7 @@ For those of you wondering what the script gives you the choice of installing, h
 - emacs
 - carla, mpc, mpd, mpv, ncmpcpp, qjackctl, pavucontrol
 - abgate.lv2 [yay] (CURRENTLY BROKEN)
+- krita
 - ueberzug [pip]
 - ncmpcpp-ueberzug
 - authy-electron [yay]
