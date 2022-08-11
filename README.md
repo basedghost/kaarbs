@@ -28,7 +28,7 @@ Here is the [full list of packages](PACKAGES.md) that this script can install.
 # post-script tweaks
 
 Here's a couple of things you might want to do after using kaarbs:
-- If you'd like to use the custom sudo lecture, use ```sudo visudo``` and add these two lines: 
+- If you'd like to use the [custom sudo lecture](https://github.com/basedghost/dotfiles/blob/main/lecture), use ```sudo visudo``` and add these two lines: 
 ```
 "Defaults lecture=always"
 "Defaults lecture_file=~/lecture"
