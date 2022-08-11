@@ -188,8 +188,8 @@ install_configs () {
     cd ~/
     rm -r dotfiles/
     
-# Shell color script
-	yay -S shell-color-script;
+# Shell color scripts
+	yay -S shell-color-scripts;
 	colorscript -b 00default.sh;
 	colorscript -b alpha;
 	colorscript -b arch;
