@@ -8,9 +8,9 @@ This script is intended to be a quick/lazy way of auto-installing all the packag
 2. Make the script executable: `sudo chmod +x kaarbs.sh`
 3. To run the script: `./kaarbs.sh`
 
-This script has been tested on a fresh Arch Linux install (using the archinstall script + multilib repo enabled + networkmanager + xfce4 DE)
+This script has been tested on a fresh [Arch Linux](https://archlinux.org/download/) install (using the archinstall script + multilib repo enabled + networkmanager + xfce4 DE)
 
-This script pulls dotfiles from my [personal repository](https://github.com/basedghost/dotfiles/):
+This script pulls dotfiles from my [personal repository](https://github.com/basedghost/dotfiles/).
 
 **A screenshot of the test:**
 ![screenshot](https://user-images.githubusercontent.com/111021033/184048144-cba87669-57d7-479d-bf45-ed37b7dc4fe2.png)
