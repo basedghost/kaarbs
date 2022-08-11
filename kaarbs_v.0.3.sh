@@ -12,7 +12,7 @@
 # Installs dependencies.
 install_dep () {
 	echo "proceeding to install necessary dependencies.." && sleep 2; 
-	sudo pacman -S rsync noto-fonts noto-fonts-cjk noto-fonts-emoji terminus-font aria2 pacman-contrib arandr nvidia-settings ufw neofetch qt5-base qt5-svg qt5-quickcontrols qt5-quickcontrols2 qt5-graphicaleffects zip unzip p7zip ntfs-3g logrotate;
+	sudo pacman -S rsync noto-fonts noto-fonts-cjk noto-fonts-emoji terminus-font aria2 pacman-contrib arandr nvidia-settings ufw neofetch qt5-base qt5-svg qt5-quickcontrols qt5-quickcontrols2 qt5-graphicaleffects zip unzip unrar p7zip ntfs-3g logrotate;
 	systemctl enable ufw;
 	sudo ufw enable
 }
