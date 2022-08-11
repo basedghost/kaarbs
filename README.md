@@ -14,4 +14,5 @@ This script pulls dotfiles from my personal repository:
 https://github.com/basedghost/dotfiles/
 
 **A screenshot of the test:**
-![preview](https://user-images.githubusercontent.com/111021033/184047998-7f37add2-9679-4f06-9f5c-2aa5900e9487.png)
+![screenshot](https://user-images.githubusercontent.com/111021033/184048144-cba87669-57d7-479d-bf45-ed37b7dc4fe2.png)
+
