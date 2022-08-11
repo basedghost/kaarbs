@@ -17,7 +17,7 @@ chmod +x kaarbs.sh
 ./kaarbs.sh
 ```
 
-This script has been tested on a fresh [Arch Linux](https://archlinux.org/download/) install (using the archinstall script + multilib repo enabled + networkmanager + xfce4 DE)
+This script has been tested on a fresh [Arch Linux](https://archlinux.org/download/) install (using the archinstall script + multilib repo + networkmanager + pipewire + xfce4 DE)
 
 This script pulls dotfiles from my [personal repository](https://github.com/basedghost/dotfiles/).
 Here is the [full list of packages](PACKAGES.md) that this script can install.
