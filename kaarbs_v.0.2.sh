@@ -7,10 +7,6 @@
 # personal use, however others could, in theory, use it. Because of my lack of technical knowledge
 # it does still require a slight amount of tinkering afterwards, but this should do for now.
 
-# *DISCLAIMER*
-#
-# The parts of the script that install my dotfiles are not available for public use yet. Skip those. (This will be updated eventually)
-
 # LIST OF FUNCTIONS
 
 # Installs dependencies.
