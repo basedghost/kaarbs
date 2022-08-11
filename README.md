@@ -6,3 +6,5 @@ How to use:
 - Clone the repo: `git clone https://github.com/basedghost/kaarbs/ && cd kaarbs; mv kaarbs_*.sh ~/kaarbs.sh; cd ..`
 - To run the script: `./kaarbs.sh`
 
+This script pulls dotfiles from this repository:
+https://github.com/basedghost/dotfiles/
