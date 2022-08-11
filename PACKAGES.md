@@ -19,7 +19,7 @@ For those of you wondering what the script gives you the choice of installing, h
 ## Third-party repos:
 - yay (AUR)
 - flatpak (flathub)
-- pip3 (python)
+- python-pip
 
 ## AwesomeWM + other packages to fill in the gaps:
 - awesome
@@ -61,7 +61,7 @@ For those of you wondering what the script gives you the choice of installing, h
 - abgate.lv2 [yay] (CURRENTLY BROKEN)
 - krita
 - ueberzug [pip]
-- ncmpcpp-ueberzug
+- ncmpcpp-ueberzug [pip]
 - authy-electron [yay]
 - discord_arch_electron, mpd-discord-rpc [yay]
 - gamemode
