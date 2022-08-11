@@ -11,6 +11,7 @@ This script is intended to be a quick/lazy way of auto-installing all the packag
 This script has been tested on a fresh [Arch Linux](https://archlinux.org/download/) install (using the archinstall script + multilib repo enabled + networkmanager + xfce4 DE)
 
 This script pulls dotfiles from my [personal repository](https://github.com/basedghost/dotfiles/).
+Here is the [full list of packages](PACKAGES.md) that this script can install.
 
 **A screenshot of the test:**
 ![screenshot](https://user-images.githubusercontent.com/111021033/184048144-cba87669-57d7-479d-bf45-ed37b7dc4fe2.png)
