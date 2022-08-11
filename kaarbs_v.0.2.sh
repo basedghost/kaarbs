@@ -242,7 +242,8 @@ install_configs () {
 	colorscript -b tux;
 	colorscript -b xmonad;
 	colorscript -b zwaves
-	
+}
+
 # Confirmation to copy my custom configs/theming.
 confirm_configs () {
     while true
