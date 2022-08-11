@@ -51,7 +51,7 @@ For those of you wondering what the script gives you the choice of installing, h
 - My .emacs file
 - My noise gate settings for Carla
 - My custom sudo lecture file
-- My preferred shell color scripts.
+- My preferred shell color scripts [yay]
 
 # My preferred packages
 - librewolf-bin [yay]
