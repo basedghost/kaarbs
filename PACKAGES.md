@@ -1,4 +1,4 @@
-# What does the script install?
+# What does kaarbs install?
 For those of you wondering what the script gives you the choice of installing, here is a complete list:
 # Dependencies:
 - nano
