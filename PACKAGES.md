@@ -1,6 +1,6 @@
 # What does kaarbs install?
 For those of you wondering what the script gives you the choice of installing, here is a complete list:
-# Dependencies:
+## Dependencies:
 - nano
 - rsync
 - noto-fonts, noto-fonts-cjk, noto-fonts-emoji
@@ -16,12 +16,12 @@ For those of you wondering what the script gives you the choice of installing, h
 - ntfs-3g
 - logrotate
 
-# Third-party repos
+## Third-party repos:
 - yay (AUR)
 - flatpak (flathub)
-- pip (python)
+- pip3 (python)
 
-# AwesomeWM + other packages to fill in the gaps
+## AwesomeWM + other packages to fill in the gaps:
 - awesome
 - nitrogen
 - picom
@@ -41,8 +41,8 @@ For those of you wondering what the script gives you the choice of installing, h
 - lightdm-webkit2-theme-glorious [yay]
 - network-manager-applet [yay]
 
-# My custom configs
-- My config files (~/.config/)
+## My custom configs/theme:
+- My config+theme files (~/.config/)
 - My custom cursors (~/.icons/)
 - My custom scripts (/usr/local/bin/)
 - Dualshock 3 controller support (/etc/udev/rules.d/)
@@ -53,7 +53,7 @@ For those of you wondering what the script gives you the choice of installing, h
 - My custom sudo lecture file
 - My preferred shell color scripts [yay]
 
-# My preferred packages
+## My preferred packages:
 - librewolf-bin [yay]
 - brave-bin [yay]
 - emacs
