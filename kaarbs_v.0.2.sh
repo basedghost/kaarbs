@@ -489,7 +489,7 @@ done
 
 # Installs manga-cli - the command-line tool to download/read manga.
 install_manga () {
-	sudo pacman -S zathura;
+	sudo pacman -S zathura zathura-cb zathura-pdf-poppler;
 	yay -S manga-cli-git;
 }
 
