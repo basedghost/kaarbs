@@ -12,7 +12,7 @@ git clone https://github.com/basedghost/kaarbs/ && cd kaarbs;mv kaarbs_*.sh ~/ka
 ```
 chmod +x kaarbs.sh
 ```
-3. To run the script:
+3. Run the script:
 ```
 ./kaarbs.sh
 ```
