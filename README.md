@@ -34,7 +34,7 @@ Here's a couple of things you might want to do after using kaarbs:
 "Defaults lecture_file=~/lecture"
 ```
 - If you'd like to use animated cursors, use the program lxappearance to choose between them.
-- If you have LightDM as your display manager and would like to use the [custom login theme](https://github.com/manilarome/lightdm-webkit2-theme-glorious), edit your `/etc/lightdm/lightdm.conf` file and add this line:
+- If you have [LightDM](https://wiki.archlinux.org/title/Lightdm) as your display manager and would like to use the [custom login theme](https://github.com/manilarome/lightdm-webkit2-theme-glorious), edit your `/etc/lightdm/lightdm.conf` file and add this line:
 ```
 greeter-session=lightdm-webkit2-greeter
 ```
