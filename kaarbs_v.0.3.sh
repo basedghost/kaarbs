@@ -172,7 +172,7 @@ install_configs () {
     cd ~/dotfiles/
     
 # Clones the /etc/ directory
-    sudo mv etc/udev/rules.d/99-ds3-controllers.rules /etc/udev/rules.d/99-ds3-controllers.rules
+    sudo cp -r etc/ /
 
 # Clones the local directory
     rsync -vrP .local/ ~/.local/
