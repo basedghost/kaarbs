@@ -435,14 +435,15 @@ done
 
 # Installs discord.
 install_discord () {
-	yay -S discord_arch_electron mpd-discord-rpc-git
+	sudo pacman -S discord;
+	yay -S mpd-discord-rpc-git
 }
 
 # Confirmation for discord.
 confirm_discord () {
 	while true
 	do
-	read -p "would you like to install discord? (remember to disable hardware acceleration in the voice/video settings!) [requires yay] [y/n]:" yn
+	read -p "would you like to install discord? (remember to disable hardware acceleration in the voice/video settings!) [also installs mpd-rpc for discord. requires yay] [y/n]:" yn
 
         case $yn in 
 	[yY] ) echo installing discord...;
