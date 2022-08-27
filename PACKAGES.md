@@ -61,7 +61,8 @@ For those of you wondering what the script gives you the choice of installing, h
 - ueberzug [pip]
 - ncmpcpp-ueberzug [pip]
 - authy-electron [yay]
-- discord_arch_electron, mpd-discord-rpc [yay]
+- discord
+- mpd-discord-rpc-git [yay]
 - gamemode
 - steam, mangohud [yay]
 - heroic-games-launcher [yay]
