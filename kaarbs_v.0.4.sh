@@ -468,7 +468,7 @@ confirm_authy () {
         read -p "would you like to install authy? (two-factor authenticator) [requires yay] [y/n]:" yn
  
         case $yn in
-        [yY] ) echo installing authy...;
+        [yY] ) echo installing authy;
                install_authy && break;;
         [nN] ) echo skipping authy...; break;;
            * ) echo invalid response;;
@@ -486,6 +486,16 @@ confirm_keepassxc () {
 	while true
 	do
 	read -p "would you like to install keepassxc? (password manager) [y/n]:" yn
+	
+	case $yn in
+	[yY] ) echo installing keepassxc;
+	       install_keepassxc && break;;
+	[nN] ) echo skipping keepassxc...; break;;
+	   * ) echo invalid response;;
+	esac
+done
+}
+
 # Installs discord.
 install_discord () {
 	sudo pacman -S discord;
@@ -499,7 +509,7 @@ confirm_discord () {
 	read -p "would you like to install discord? (remember to disable hardware acceleration in the voice/video settings!) [also installs mpd-rpc for discord. requires yay] [y/n]:" yn
 
         case $yn in 
-	[yY] ) echo installing discord...;
+	[yY] ) echo installing discord;
                install_discord && break;;
         [nN] ) echo skipping discord...; break;;
            * ) echo invalid response;;
@@ -521,7 +531,7 @@ confirm_steam () {
 	do
 	read -p "would you like to install steam? [requires yay] [y/n]:" yn
 
-        case $yn in [yY] ) echo installing steam...;
+        case $yn in [yY] ) echo installing steam;
               install_steam && echo "steam is installed. the directory ~/.local/share/Steam/compatibilitytools.d/ has been created. please download the glorious eggroll version of proton from github, and extract it in that directory." && sleep 3 && break;;
        [nN] ) echo skipping steam...; break;;
           * ) echo invalid response;;
@@ -540,7 +550,7 @@ confirm_heroic () {
         read -p "would you like to install the heroic games launcher? (open source launcher for epic games/gog) [requires yay] [y/n]:" yn
 
         case $yn in
-        [yY] ) echo installing the heroic games launcher...;
+        [yY] ) echo installing the heroic games launcher;
                install_heroic && break;;
         [nN] ) echo skipping heroic...; break;;
            * ) echo invalid response;;
@@ -564,7 +574,7 @@ confirm_ani () {
         read -p "would you like to install ani-cli? (command line interface for anime streaming) [y/n]:" yn
 
         case $yn in
-	[yY] ) echo installing ani-cli...;
+	[yY] ) echo installing ani-cli;
                install_ani && break;;
         [nN] ) echo skipping ani-cli...; break;;
            * ) echo invalid response;;
@@ -585,7 +595,7 @@ confirm_manga () {
         read -p "would you like to install manga-cli? (command line interface for reading manga) [requires yay] [y/n]:" yn
 
         case $yn in
-        [yY] ) echo installing manga-cli...;
+        [yY] ) echo installing manga-cli;
                install_manga && break;;
         [nN] ) echo skipping manga-cli...; break;;
            * ) echo invalid response;;
@@ -605,7 +615,7 @@ confirm_trash () {
 	read -p "would you like to install trash-cli? (command line tool for emptying trash)"
 	
 	case $yn in
-	[yY] ) echo installing trash-cli...;
+	[yY] ) echo installing trash-cli;
 	       install_trash && break;;
 	[nN] ) echo skipping trash-cli...; break;;
 	   * ) echo invalid response;;
@@ -625,7 +635,7 @@ confirm_slsk () {
         read -p "would you like to install soulseek? (a p2p file sharing service) [requires yay] [y/n]:" yn
 
         case $yn in
-        [yY] ) echo installing slsk...;
+        [yY] ) echo installing slsk;
                install_slsk && break;;
         [nN] ) echo skipping slsk...; break;;
            * ) echo invalid response;;
@@ -645,7 +655,7 @@ confirm_bigly () {
         read -p "would you like to install biglybt? (a bittorrent client) [requires yay] [y/n]:" yn
 
         case $yn in
-        [yY] ) echo installing biglybt...;
+        [yY] ) echo installing biglybt;
                install_bigly && break;;
         [nN] ) echo skipping bigly...; break;;
            * ) echo invalid response;;
@@ -665,7 +675,7 @@ confirm_wine () {
         read -p "would you like to install wine? (wine is not an emulator - it is a compatibility layer for linux allowing you to run windows software/games) [y/n]:" yn
 
         case $yn in
-        [yY] ) echo installing wine...;
+        [yY] ) echo installing wine;
                install_wine && break;;
         [nN] ) echo skipping wine...; break;;
            * ) echo invalid response;;
@@ -689,7 +699,7 @@ confirm_wineasio () {
         read -p "would you like to install wineasio? (an asio driver implementation for wine) [requires yay] [y/n]:" yn
 
         case $yn in
-        [yY] ) echo installing wineasio...;
+        [yY] ) echo installing wineasio;
                install_wineasio && break;;
         [nN] ) echo skipping wineasio...; break;;
            * ) echo invalid response;;
@@ -709,7 +719,7 @@ confirm_reaper () {
         read -p "would you like to install reaper? (a digital audio workstation) [y/n]:" yn
 
         case $yn in
-        [yY] ) echo installing reaper...;
+        [yY] ) echo installing reaper;
                install_reaper && break;;
         [nN] ) echo skipping reaper...; break;;
            * ) echo invalid response;;
@@ -733,7 +743,7 @@ confirm_vm () {
         read -p "would you like to install virt-manager? (a frontend for kvm/qemu) [y/n]:" yn
 
         case $yn in
-        [yY] ) echo installing virt-manager...;
+        [yY] ) echo installing virt-manager;
                install_vm && break;;
         [nN] ) echo skipping virt-manager...; break;;
            * ) echo invalid response;;
@@ -753,7 +763,7 @@ confirm_coolero () {
         read -p "would you like to install coolero? (gui to control nzxt aio coolers) [requires flatpak] [y/n]:" yn
 
         case $yn in
-        [yY] ) echo installing coolero...;
+        [yY] ) echo installing coolero;
                install_coolero && break;;
         [nN] ) echo skipping coolero...; break;;
            * ) echo invalid response;;
@@ -773,7 +783,7 @@ confirm_openrgb () {
         read -p "would you like to install openrgb? (gui to control rgb components) [requires flatpak] [y/n]:" yn
 
         case $yn in
-        [yY] ) echo installing openrgb...;
+        [yY] ) echo installing openrgb;
                install_openrgb && break;;
         [nN] ) echo skipping openrgb...; break;;
            * ) echo invalid response;;
@@ -793,7 +803,7 @@ confirm_dolphin () {
 	read -p "would you like to install dolphin? (gamecube+wii emulator) [requires flatpak] [y/n]:" yn
 
 	case $yn in
-	[yY] ) echo installing dolphin emulator...;
+	[yY] ) echo installing dolphin emulator;
                install_dolphin && break;;
         [nN] ) echo skipping dolphin emulator...; break;;
            * ) echo invalid response;;
@@ -813,7 +823,7 @@ confirm_mupen () {
         read -p "would you like to install mupen64plus? (nintendo 64 emulator - gui made by rosalie241) [requires flatpak] [y/n]:" yn
 
         case $yn in
-        [yY] ) echo installing mupen64plus...;
+        [yY] ) echo installing mupen64plus;
                install_mupen && break;;
         [nN] ) echo skipping mupen64plus...; break;;
            * ) echo invalid response;;
@@ -833,7 +843,7 @@ confirm_mupen_aur () {
 	read -p "would you like to install mupen64plus? (nintendo 64 emulator - gui made by rosalie241) [requires yay] [y/n]:" yn
 
 	case $yn in
-	    [yY] ) echo installing mupen64plus...;
+	    [yY] ) echo installing mupen64plus;
 		   install_mupen_aur && break;;
 	    [nN] ) echo skipping mupen64plus...; break;;
 	    * ) echo invalid response;;
@@ -853,7 +863,7 @@ confirm_rpcs3 () {
         read -p "would you like to install rpcs3? (playstation 3 emulator) [requires yay] [y/n]:" yn
 
         case $yn in
-        [yY] ) echo installing rpcs3...;
+        [yY] ) echo installing rpcs3;
                install_rpcs3 && break;;
         [nN] ) echo skipping rpcs3...; break;;
            * ) echo invalid response;;
@@ -873,7 +883,7 @@ confirm_pcsx2 () {
         read -p "would you like to install pcsx2? (playstation 2 emulator) [y/n]:" yn
 
         case $yn in
-        [yY] ) echo installing pcsx2...;
+        [yY] ) echo installing pcsx2;
                install_pcsx2 && break;;
         [nN] ) echo skipping pcsx2...; break;;
            * ) echo invalid response;;
@@ -893,7 +903,7 @@ confirm_duckstation () {
         read -p "would you like to install duckstation? (playstation emulator) [requires flatpak] [y/n]:" yn
 
         case $yn in
-        [yY] ) echo installing duckstation...;
+        [yY] ) echo installing duckstation;
                install_duckstation && break;;
         [nN] ) echo skipping duckstation...; break;;
            * ) echo invalid response;;
@@ -913,7 +923,7 @@ confirm_flycast () {
         read -p "would you like to install flycast? (dreamcast emulator) [requires flatpak] [y/n]:" yn
         
 	case $yn in
-        [yY] ) echo installing flycast...;
+        [yY] ) echo installing flycast;
                install_flycast && break;;
         [nN] ) echo skipping flycast...; break;;
            * ) echo invalid response;;
