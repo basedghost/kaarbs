@@ -6,7 +6,6 @@ For those of you wondering what the script gives you the choice of installing, h
 - terminus-font
 - pacman-contrib
 - arandr
-- nvidia-settings
 - ufw
 - neofetch
 - qt5-base, qt5-svg, qt5-quickcontrols, qt5-quickcontrols2, qt5-graphicaleffects
@@ -14,10 +13,13 @@ For those of you wondering what the script gives you the choice of installing, h
 - ntfs-3g
 - logrotate
 
+## Optional dependencies:
+- nvidia-settings
+
 ## Third-party repos:
-- yay (AUR)
-- flatpak (flathub)
-- python-pip
+- arch user repository (AUR w/ yay)
+- flathub (flatpaks)
+- pip (python)
 
 ## AwesomeWM + other packages to fill in the gaps:
 - awesome
@@ -49,6 +51,7 @@ For those of you wondering what the script gives you the choice of installing, h
 - My .emacs file
 - My noise gate settings for Carla
 - My custom sudo lecture file
+- figlet
 - My preferred shell color scripts [yay]
 
 ## My preferred packages:
@@ -57,10 +60,12 @@ For those of you wondering what the script gives you the choice of installing, h
 - emacs
 - carla, mpc, mpd, mpv, ncmpcpp, qjackctl, pavucontrol
 - abgate.lv2 [yay]
-- krita
+- krita [flatpak]
+- kdenlive [flatpak]
 - ueberzug [pip]
 - ncmpcpp-ueberzug [pip]
 - authy-electron [yay]
+- keepassxc
 - discord
 - mpd-discord-rpc-git [yay]
 - gamemode
@@ -69,6 +74,7 @@ For those of you wondering what the script gives you the choice of installing, h
 - axel, curl, mpv, openssl, ffmpeg, ani-cli
 - zathura, zathura-cb, zathura-pdf-poppler
 - manga-cli-git [yay]
+- trash-cli
 - soulseek [yay]
 - biglybt [yay]
 - wine, winetricks
@@ -80,7 +86,7 @@ For those of you wondering what the script gives you the choice of installing, h
 - openrgb [flatpak]
 - dolphinemu [flatpak]
 - mupen64plus [flatpak or yay]
-- rpcs3 [flatpak]
+- rpcs3 [yay]
 - pcsx2
 - duckstation [flatpak]
 - flycast [flatpak]
