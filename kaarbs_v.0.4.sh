@@ -12,7 +12,7 @@
 # Installs dependencies.
 install_dep () {
 	echo "proceeding to install necessary dependencies.." && sleep 2; 
-	sudo pacman -S rsync noto-fonts noto-fonts-cjk noto-fonts-emoji terminus-font pacman-contrib arandr nvidia-settings ufw neofetch qt5-base qt5-svg qt5-quickcontrols qt5-quickcontrols2 qt5-graphicaleffects zip unzip unrar p7zip ntfs-3g logrotate;
+	sudo pacman -S rsync noto-fonts noto-fonts-cjk noto-fonts-emoji terminus-font pacman-contrib arandr ufw neofetch qt5-base qt5-svg qt5-quickcontrols qt5-quickcontrols2 qt5-graphicaleffects zip unzip unrar p7zip ntfs-3g logrotate;
 	systemctl enable ufw;
 	sudo ufw enable
 }
@@ -24,12 +24,33 @@ script_init () {
         read -p "Welcome to KAARBS (Kojiros Automated Arch Ricing Bash Script). This script will install all of my preferred packages/configs (with a prompt before each one so you can choose which ones you want). Before running this script, please make sure your system is completely up to date. Y to proceed, N to exit, or S to skip ahead if re-running script. [y/n/s]:" yn
 
         case $yn
-        in [yY] ) echo installing dependencies...;
+        in [yY] ) echo installing dependencies;
                   install_dep && break;;
            [nN] ) echo exiting KAARBS; exit;;
 	   [sS] ) echo skipping dependencies...; break;;
               * ) echo invalid response;;
         esac
+done
+}
+
+# Installs nvidia settings package.
+install_nvidia () {
+	sudo pacman -S nvidia-settings
+}
+	
+# Confirmation of nvidia-settings installation.
+confirm_nvidia () {
+	while true
+	do
+	read -p "do you have an nvidia gpu? [y/n/s]:" yn
+	
+	case $yn
+	in [yY] ) echo installing nvidia settings;
+		  install_nvidia && break;;
+	   [nN] ) echo skipping nvidia settings...; break;;
+	   [sS] ) echo skipping dependency...; break;;
+	      * ) echo invalid response;;
+	esac
 done
 }
 
@@ -47,7 +68,7 @@ confirm_yay () {
 	read -p "would you like to install the aur helper, yay? [*HIGHLY RECOMMENDED* - REQUIRED FOR MOST PACKAGES IN THIS SCRIPT] [y/n]:" yn
 
 	case $yn
-	in [yY] ) echo installing yay...;
+	in [yY] ) echo installing yay;
 		  install_yay && break;;
 	   [nN] ) echo skipping yay...; break;;
 	      * ) echo invalid response;;
@@ -72,7 +93,7 @@ confirm_flatpak () {
         read -p "would you like to enable the flathub repository? [*HIGHLY RECOMMENDED* - REQUIRED FOR MOST PACKAGES IN THIS SCRIPT] [y/n]:" yn
 
         case $yn
-        in [yY] ) echo enabling flatpaks...;
+        in [yY] ) echo enabling flatpaks (you will need to reboot after it has completed);
                   install_flatpak && break;;
            [nN] ) echo skipping flatpak repo...; break;;
               * ) echo invalid response;;
@@ -135,7 +156,7 @@ confirm_awesomewm () {
 	read -p "would you like to install awesomeWM - the dynamic window manager? [y/n]:" yn
 
         case $yn in
-	[yY] ) echo installing awesomeWM...;
+	[yY] ) echo installing awesomeWM;
                install_awesomewm && break;;
         [nN] ) echo skipping awesomeWM...; break;;
            * ) echo invalid response;;
@@ -143,7 +164,7 @@ confirm_awesomewm () {
 done
 }	
 
-# This will be updated eventually for public use. (copies my configs and themes over)
+# Copies my configs and themes over
 install_configs () {
 # Clones the repo of my custom configs/wm theme.
     cd ~/;
@@ -194,8 +215,11 @@ install_configs () {
     mv lecture ~/lecture
 
 # Ffmpeg batch convert script
-    mv ffmpeg-batch.sh ~/ffmpeg-batch.sh
+    chmod +x ffmpeg-batch.sh && mv ffmpeg-batch.sh ~/ffmpeg-batch.sh
     
+# Installs figlet
+   sudo pacman -S figlet;
+ 
 # Shell color scripts
 	yay -S shell-color-scripts;
 	colorscript -b 00default.sh;
@@ -259,7 +283,7 @@ confirm_configs () {
         read -p "would you like to install kojiros custom configs/themes? [y/n]:" yn
 
         case $yn in
-        [yY] ) echo installing kojiros configs/themes...;
+        [yY] ) echo installing kojiros configs/themes;
                install_configs && break;;
         [nN] ) echo skipping configs...; break;;
            * ) echo invalid response;;
@@ -279,7 +303,7 @@ confirm_librewolf () {
 	read -p "would you like to install the librewolf web browser? [requires yay] [y/n]:" yn
 
 	case $yn in
-	[yY] ) echo installing librewolf...;
+	[yY] ) echo installing librewolf;
                install_librewolf && break;;
         [nN] ) echo skipping librewolf...; break;;
            * ) echo invalid response;;
@@ -299,7 +323,7 @@ confirm_brave () {
 	read -p "would you like to install the brave web browser? [requires yay] [y/n]:" yn
  
         case $yn in
-	[yY] ) echo installing brave...;
+	[yY] ) echo installing brave;
                install_brave && break;;
         [nN] ) echo skipping brave...; break;;
            * ) echo invalid response;;
@@ -320,7 +344,7 @@ confirm_emacs () {
         read -p "would you like to install gnu emacs? [y/n]:" yn
 
         case $yn in
-        [yY] ) echo installing+enabling emacs...;
+        [yY] ) echo installing+enabling emacs;
                install_emacs && break;;
         [nN] ) echo skipping emacs...; break;;
            * ) echo invalid response;;
@@ -343,7 +367,7 @@ confirm_multimedia () {
 	read -p "would you like to install frequently used multimedia applications? [requires yay] [y/n]:" yn
  
         case $yn in
-	[yY] ) echo installing multimedia packages...;
+	[yY] ) echo installing multimedia packages;
                install_multimedia && break;;
         [nN] ) echo skipping multimedia stuff...; break;;
            * ) echo invalid response;;
@@ -353,14 +377,14 @@ done
 
 # Installs krita.
 install_krita () {
-    sudo pacman -S krita
+    flatpak install flathub org.kde.krita
 }
 
 # Confirmation for krita.
 confirm_krita () {
     while true
     do
-	read -p "would you like to install krita? [y/n]:" yn
+	read -p "would you like to install krita? [requires flatpak] [y/n]:" yn
 
 	case $yn in
 	    [yY] ) echo installing krita;
@@ -369,6 +393,25 @@ confirm_krita () {
 	    * ) echo invalid response;;
 	esac
     done
+}
+
+# Installs kdenlive.
+install_kdenlive () {
+	flatpak install flathub org.kde.kdenlive
+}
+
+# Confirmation for kdenlive.
+confirm_kdenlive () {
+	while true
+	do
+	read -p "would you like to install kdenlive? [requires flatpak] [y/n]:" yn
+	
+	case $yn in
+	[yY] ) echo installing kdenlive;
+	[nN] ) echo skipping kdenlive...; break;;
+	   * ) echo invalid response;;
+	esac
+done
 }
 
 # Installs ueberzug.
@@ -433,6 +476,16 @@ confirm_authy () {
 done
 }
 
+# Installs keepassxc.
+install_keepassxc () {
+	sudo pacman -S keepassxc
+}
+
+# Confirmation for keepassxc.
+confirm_keepassxc () {
+	while true
+	do
+	read -p "would you like to install keepassxc? (password manager) [y/n]:" yn
 # Installs discord.
 install_discord () {
 	sudo pacman -S discord;
@@ -537,6 +590,26 @@ confirm_manga () {
         [nN] ) echo skipping manga-cli...; break;;
            * ) echo invalid response;;
         esac
+done
+}
+
+# Installs trash-cli.
+install_trash () {
+	sudo pacman -S trash-cli
+}
+
+# Confirmation for trash-cli.
+confirm_trash () {
+	while true
+	do
+	read -p "would you like to install trash-cli? (command line tool for emptying trash)"
+	
+	case $yn in
+	[yY] ) echo installing trash-cli...;
+	       install_trash && break;;
+	[nN] ) echo skipping trash-cli...; break;;
+	   * ) echo invalid response;;
+	esac
 done
 }
 
@@ -770,14 +843,14 @@ confirm_mupen_aur () {
 
 # Installs rpcs3 (playstation 3 emulator)
 install_rpcs3 () {
-	flatpak install flathub net.rpcs3.RPCS3
+	yay -S rpcs3-bin
 }
 
 # Confirmation for rpcs3.
 confirm_rpcs3 () {
         while true
         do
-        read -p "would you like to install rpcs3? (playstation 3 emulator) [requires flatpak] [y/n]:" yn
+        read -p "would you like to install rpcs3? (playstation 3 emulator) [requires yay] [y/n]:" yn
 
         case $yn in
         [yY] ) echo installing rpcs3...;
@@ -867,6 +940,9 @@ done
 # Welcome/dependencies
 script_init
 
+# Nvidia settings (optional dependency)
+confirm_nvidia
+
 # AUR helper (makes for easier installations of packages from the arch user repository)
 confirm_yay
 
@@ -891,6 +967,9 @@ confirm_multimedia
 # Krita
 confirm_krita
 
+# Kdenlive
+confirm_kdenlive
+
 # Ueberzug (used to display album art in ncmpcpp)
 confirm_ueberzug
 
@@ -909,6 +988,9 @@ confirm_emacs
 # Authy 2fa [yay]
 confirm_authy
 
+# Keepassxc
+confirm_keepassxc
+
 # Discord client [yay]
 confirm_discord
 
@@ -923,6 +1005,9 @@ confirm_ani
 
 # Manga-cli [yay]
 confirm_manga
+
+# Trash-cli
+confirm_trash
 
 # Soulseek [yay]
 confirm_slsk
