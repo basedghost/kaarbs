@@ -93,7 +93,7 @@ confirm_flatpak () {
         read -p "would you like to enable the flathub repository? [*HIGHLY RECOMMENDED* - REQUIRED FOR MOST PACKAGES IN THIS SCRIPT] [y/n]:" yn
 
         case $yn
-        in [yY] ) echo enabling flatpaks (you will need to reboot after it has completed);
+        in [yY] ) echo "enabling flatpaks (you will need to reboot after it has completed)";
                   install_flatpak && break;;
            [nN] ) echo skipping flatpak repo...; break;;
               * ) echo invalid response;;
