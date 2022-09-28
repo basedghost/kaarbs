@@ -408,6 +408,7 @@ confirm_kdenlive () {
 	
 	case $yn in
 	[yY] ) echo installing kdenlive;
+		install_kdenlive && break;;
 	[nN] ) echo skipping kdenlive...; break;;
 	   * ) echo invalid response;;
 	esac
