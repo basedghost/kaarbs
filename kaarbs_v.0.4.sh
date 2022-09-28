@@ -613,7 +613,7 @@ install_trash () {
 confirm_trash () {
 	while true
 	do
-	read -p "would you like to install trash-cli? (command line tool for emptying trash)"
+	read -p "would you like to install trash-cli? (command line tool for emptying trash)[y/n]:" yn
 	
 	case $yn in
 	[yY] ) echo installing trash-cli;
