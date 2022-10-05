@@ -331,7 +331,7 @@ done
 # Installs oh-my-bash, custom themes for bash shell.
 install_omb () {
      sudo pacman -S curl;
-     bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)";;
+     bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
 }
 
 confirm_omb () {
