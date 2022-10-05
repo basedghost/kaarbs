@@ -333,6 +333,7 @@ done
 install_omb () {
      sudo pacman -S curl;
      bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
+     sudo echo "colorscript random">>.bashrc
 }
 
 confirm_omb () {
