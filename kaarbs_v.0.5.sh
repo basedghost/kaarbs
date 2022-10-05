@@ -34,7 +34,7 @@ install_dep () {
 script_init () {
         while true
         do
-        read -p "$(echo -e ${NC}Welcome to ${YELLOW}KAARBS (Kojiros Automated Arch Ricing Bash Script)${NC}."$'\n'"This script gives you the option to install my preferred packages/configs."$'\n'"Before running this script, please make sure that you've read the README, and that your system is completely up to date."$'\n'"${CYAN}(P)roceed,(E)xit,(L)ist packages or (S)kip ahead if re-running script. [p/e/l/s]:)" yn
+        read -p "$(echo -e $NC"Welcome to"$YELLOW"KAARBS (Kojiros Automated Arch Ricing Bash Script)"$NC"."$'\n'"This script gives you the option to install my preferred packages/configs."$'\n'"Before running this script, please make sure that you've read the README, and that your system is completely up to date."$'\n'"$CYAN"(P)roceed,(E)xit,(L)ist packages or (S)kip ahead if re-running script. [p/e/l/s]:)" yn
 
         case $yn
         in [pP] ) echo -e "${NC}installing dependencies";
@@ -996,7 +996,7 @@ done
 script_finish () {
 	while true
         do
-        read -p "$(echo -e ${NC}thank you for using KAARBS."$'\n'"${NC}In case you missed a package, you can re-run the script."$'\n'"${CYAN}(E)xit or (R)e-run the script.)" yn
+        read -p "$(echo -e $NC"thank you for using KAARBS."$'\n'$NC"In case you missed a package, you can re-run the script."$'\n'$CYAN"(E)xit or (R)e-run the script.)" yn
 
         case $yn in
         [eE] ) echo -e "${RED}exiting KAARBS"; exit;;
