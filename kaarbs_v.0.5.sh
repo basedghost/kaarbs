@@ -794,7 +794,7 @@ install_vm () {
 	sudo systemctl start libvirtd;
 	sudo systemctl enable libvirtd;
 	echo -e "${YELLOW}you must now edit your /etc/libvirt/libvirtd.conf and uncomment:"$'\n'"${CYAN}unix_sock_group, unix_sock_ro_perms, and unix_sock_rw_perms" && sleep 3;
-	echo -e "${YELLOW}then run 'sudo usermod -aG libvirt $(whoami)' and reboot.";;
+	echo -e "${YELLOW}then run 'sudo usermod -aG libvirt $(whoami)' and reboot.";
 }
 
 # Confirmation for virt-manager.
