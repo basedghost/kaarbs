@@ -8,7 +8,7 @@ For those of you wondering what the script gives you the choice of installing, h
 - arandr
 - ufw
 - neofetch
-- qt5-base, qt5-svg, qt5-quickcontrols, qt5-quickcontrols2, qt5-graphicaleffects
+- qt5-base, qt5-svg, qt5-quickcontrols, qt5-quickcontrols2, qt5-graphicaleffects, qt5-multimedia
 - zip, unzip, unrar, p7zip
 - ntfs-3g
 - logrotate
@@ -38,7 +38,8 @@ For those of you wondering what the script gives you the choice of installing, h
 - feh
 - imagemagick
 - conky
-- lightdm-webkit2-theme-glorious [yay]
+- sddm
+- sddm-lain-wired-theme
 - network-manager-applet [yay]
 
 ## My custom configs/theme:
@@ -53,12 +54,13 @@ For those of you wondering what the script gives you the choice of installing, h
 - My custom sudo lecture file
 - figlet
 - My preferred shell color scripts [yay]
+- Oh-my-bash
 
 ## My preferred packages:
 - librewolf-bin [yay]
 - brave-bin [yay]
 - emacs
-- carla, mpc, mpd, mpv, ncmpcpp, qjackctl, pavucontrol
+- carla, mpc, mpd, mpv, ncmpcpp, qpwgraph, pavucontrol
 - abgate.lv2 [yay]
 - krita [flatpak]
 - kdenlive [flatpak]
