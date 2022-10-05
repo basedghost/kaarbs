@@ -8,6 +8,18 @@
 # it does still require a slight amount of tinkering afterwards, but this should do for now.
 
 # LIST OF FUNCTIONS
+# Color coded text.
+# No Color
+NC='\033[0m'
+
+# Red
+RED='\033[0;31m'
+
+#Cyan
+CYAN='\033[0;36m'
+
+#Yellow
+YELLOW='\033[0;33m'
 
 # Installs dependencies.
 install_dep () {
