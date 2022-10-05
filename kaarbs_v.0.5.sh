@@ -996,7 +996,7 @@ done
 script_finish () {
 	while true
         do
-        read -p "$(echo -e $NC"thank you for using KAARBS."$'\n'$NC"In case you missed a package, you can re-run the script."$'\n'$CYAN"[E]xit or [R]e-run the script.)" yn
+        read -p "$(echo -e $NC"thank you for using KAARBS."$'\n'"In case you missed a package, you can re-run the script."$'\n'$CYAN"[E]xit or [R]e-run the script.)" yn
 
         case $yn in
         [eE] ) echo -e "${RED}exiting KAARBS"; exit;;
