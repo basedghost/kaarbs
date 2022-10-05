@@ -37,12 +37,12 @@ script_init () {
 
         case $yn
         in
-	[pP] ) echo -e "installing dependencies";
+	[pP] ) echo -e "${CYAN}installing dependencies${NC}";
                   install_dep && break;;
            [eE] ) echo -e "${RED}exiting KAARBS"; exit;;
            [lL] ) clear; echo -e "rsync"$'\n'"noto-fonts"$'\n'"noto-fonts-cjk"$'\n'"noto-fonts-emoji"$'\n'"terminus-font"$'\n'"pacman-contrib"$'\n'"arandr"$'\n'"ufw"$'\n'"neofetch"$'\n'"qt5-base"$'\n'"qt5-svg"$'\n'"qt5-quickcontrols"$'\n'"qt5-quickcontrols2"$'\n'"qt5-graphicaleffects"$'\n'"qt5-multimedia${NC}"; script_init;;
-	   [sS] ) echo -e "${RED}skipping dependencies...${NC}"; break;;
-              * ) echo -e "${YELLOW}invalid response${NC}";;
+	   [sS] ) echo -e "${YELLOW}skipping dependencies...${NC}"; break;;
+              * ) echo -e "${RED}invalid response${NC}";;
         esac
 done
 }
@@ -59,11 +59,11 @@ confirm_nvidia () {
 	read -p "do you have an nvidia gpu? [y/n/s]:" yn
 	
 	case $yn
-	in [yY] ) echo -e "${NC}installing nvidia settings";
+	in [yY] ) echo -e "${CYAN}installing nvidia settings${NC}";
 		  install_nvidia && break;;
-	   [nN] ) echo -e "${RED}skipping nvidia settings...${NC}"; break;;
-	   [sS] ) echo -e "${RED}skipping dependency...${NC}"; break;;
-	      * ) echo -e "${YELLOW}invalid response${NC}";;
+	   [nN] ) echo -e "${YELLOW}skipping nvidia settings...${NC}"; break;;
+	   [sS] ) echo -e "${YELLOW}skipping dependency...${NC}"; break;;
+	      * ) echo -e "${RED}invalid response${NC}";;
 	esac
 done
 }
@@ -82,10 +82,10 @@ confirm_yay () {
 	read -p "would you like to install the aur helper, yay? [*HIGHLY RECOMMENDED* - REQUIRED FOR MOST PACKAGES IN THIS SCRIPT] [y/n]:" yn
 
 	case $yn
-	in [yY] ) echo -e "${NC}installing yay";
+	in [yY] ) echo -e "${CYAN}installing yay${NC}";
 		  install_yay && break;;
-	   [nN] ) echo -e "${RED}skipping yay...${NC}"; break;;
-	      * ) echo -e "${YELLOW}invalid response${NC}";;
+	   [nN] ) echo -e "${YELLOW}skipping yay...${NC}"; break;;
+	      * ) echo -e "${RED}invalid response${NC}";;
 	esac
 done
 }
@@ -107,10 +107,10 @@ confirm_flatpak () {
         read -p "would you like to enable the flathub repository? [*HIGHLY RECOMMENDED* - REQUIRED FOR MOST PACKAGES IN THIS SCRIPT] [y/n]:" yn
 
         case $yn
-        in [yY] ) echo -e "${NC}enabling flatpaks ${YELLOW}(you will need to reboot after it has completed)${NC}";
+        in [yY] ) echo -e "${CYAN}enabling flatpaks ${YELLOW}(you will need to reboot after it has completed)${NC}";
                   install_flatpak && break;;
-           [nN] ) echo -e "${RED}skipping flatpak repo...${NC}"; break;;
-              * ) echo -e "${YELLOW}invalid response${NC}";;
+           [nN] ) echo -e "${YELLOW}skipping flatpak repo...${NC}"; break;;
+              * ) echo -e "${RED}invalid response${NC}";;
         esac
 done
 } 
@@ -122,10 +122,10 @@ confirm_restart () {
         read -p "if you enabled the flathub repo, you must reboot your system to install flatpaks."$'\n'"would you like to reboot now? [run this script again after rebooting to continue] [y/n]:" yn
 
         case $yn
-        in [yY] ) echo -e "${NC}rebooting...";
+        in [yY] ) echo -e "${CYAN}rebooting...${NC}";
                   restart_flatpak;;
-           [nN] ) echo -e "${RED}skipping reboot...${NC}"; break;;
-              * ) echo -e "${YELLOW}invalid response${NC}";;
+           [nN] ) echo -e "${YELLOW}skipping reboot...${NC}"; break;;
+              * ) echo -e "${RED}invalid response${NC}";;
         esac
 done
 }
@@ -142,10 +142,10 @@ confirm_pip () {
 	read -p "would you like to install pip - the python package manager? [only required to install ueberzug] [y/n]:" yn
 
 	case $yn
-	in [yY] ) echo -e "${NC}installing pip";
+	in [yY] ) echo -e "${CYAN}installing pip${NC}";
 		  install_pip && break;;
-	   [nN] ) echo -e "${RED}skipping pip...${NC}"; break;;
-	   * ) echo -e "${YELLOW}invalid response${NC}";;
+	   [nN] ) echo -e "${YELLOW}skipping pip...${NC}"; break;;
+	   * ) echo -e "${RED}invalid response${NC}";;
 	esac
     done
 }
@@ -166,11 +166,11 @@ confirm_awesomewm () {
 	read -p "would you like to install awesomeWM - the dynamic window manager?(Y)es, (N)o, or (L)ist packages [y/n/l]:" yn
 
         case $yn in
-	[yY] ) echo -e "${NC}installing awesomeWM";
+	[yY] ) echo -e "${CYAN}installing awesomeWM + other packages to fill in the gaps.${NC}";
                install_awesomewm && break;;
-        [nN] ) echo -e "${RED}skipping awesomeWM...${NC}"; break;;
+        [nN] ) echo -e "${YELLOW}skipping awesomeWM...${NC}"; break;;
         [lL] ) clear; echo -e "${CYAN}awesome\nnitrogen\npicom\nxorg-xwininfo\nxorg-xprop\nxscreensaver\ndmenu\npolkit-gnome\nkitty\nunclutter\nlxappearance\npavucontrol\npcmanfm\nscrot\nfeh\nimagemagick\nconky${NC}"; confirm_awesomewm;;
-           * ) echo -e "${YELLOW}invalid response${NC}";;
+           * ) echo -e "${RED}invalid response${NC}";;
         esac
 done
 }	
@@ -194,10 +194,10 @@ while true
 	read -p "would you like to install sddm - a login screen manager? [y/n]:" yn
 
         case $yn in
-	[yY] ) echo -e "${NC}installing + enabling sddm";
+	[yY] ) echo -e "${CYAN}installing+enabling sddm${NC}";
                install_sddm && break;;
-        [nN] ) echo -e "${RED}skipping sddm...${NC}"; break;;
-           * ) echo -e "${YELLOW}invalid response${NC}";;
+        [nN] ) echo -e "${YELLOW}skipping sddm...${NC}"; break;;
+           * ) echo -e "${RED}invalid response${NC}";;
         esac
 done
 }
@@ -321,10 +321,10 @@ confirm_configs () {
         read -p "would you like to install kojiros custom configs/themes? [y/n]:" yn
 
         case $yn in
-        [yY] ) echo -e "${NC}installing kojiros configs/themes";
+        [yY] ) echo -e "${CYAN}installing kojiros configs/themes${NC}";
                install_configs && break;;
-        [nN] ) echo -e "${RED}skipping configs...${NC}"; break;;
-           * ) echo -e "${YELLOW}invalid response${NC}";;
+        [nN] ) echo -e "${YELLOW}skipping kojiros configs...${NC}"; break;;
+           * ) echo -e "${RED}invalid response${NC}";;
         esac
 done
 }
@@ -342,10 +342,10 @@ confirm_omb () {
         read -p "would you like to install oh-my-bash (custom bash themes)? [y/n]:" yn
 
         case $yn in
-        [yY] ) echo -e "${NC}installing oh my bash";
+        [yY] ) echo -e "${CYAN}installing oh my bash${NC}";
                install_omb && break;;
-        [nN] ) echo -e "${RED}skipping oh my bash...${NC}"; break;;
-           * ) echo -e "${YELLOW}invalid response${NC}";;
+        [nN] ) echo -e "${YELLOW}skipping oh my bash...${NC}"; break;;
+           * ) echo -e "${RED}invalid response${NC}";;
         esac
 done
 }
@@ -362,10 +362,10 @@ confirm_librewolf () {
 	read -p "would you like to install the librewolf web browser? [requires yay] [y/n]:" yn
 
 	case $yn in
-	[yY] ) echo -e "${NC}installing librewolf";
+	[yY] ) echo -e "${CYAN}installing librewolf${NC}";
                install_librewolf && break;;
-        [nN] ) echo -e "${RED}skipping librewolf...${NC}"; break;;
-           * ) echo -e "${YELLOW}invalid response${NC}";;
+        [nN] ) echo -e "${YELLOW}skipping librewolf...${NC}"; break;;
+           * ) echo -e "${RED}invalid response${NC}";;
         esac
 done
 }
@@ -382,10 +382,10 @@ confirm_brave () {
 	read -p "would you like to install the brave web browser? [requires yay] [y/n]:" yn
  
         case $yn in
-	[yY] ) echo -e "${NC}installing brave";
+	[yY] ) echo -e "${CYAN}installing brave${NC}";
                install_brave && break;;
-        [nN] ) echo -e "${RED}skipping brave...${NC}"; break;;
-           * ) echo -e "${YELLOW}invalid response${NC}";;
+        [nN] ) echo -e "${YELLOW}skipping brave...${NC}"; break;;
+           * ) echo -e "${RED}invalid response${NC}";;
         esac
 done
 }
@@ -403,10 +403,10 @@ confirm_emacs () {
         read -p "would you like to install gnu emacs? [y/n]:" yn
 
         case $yn in
-        [yY] ) echo -e "${NC}installing+enabling emacs";
+        [yY] ) echo -e "${CYAN}installing+enabling emacs${NC}";
                install_emacs && break;;
-        [nN] ) echo -e "${RED}skipping emacs...${NC}"; break;;
-           * ) echo -e "${YELLOW}invalid response${NC}";;
+        [nN] ) echo -e "${YELLOW}skipping emacs...${NC}"; break;;
+           * ) echo -e "${RED}invalid response${NC}";;
         esac
 done
 }
@@ -426,11 +426,11 @@ confirm_multimedia () {
 	read -p "would you like to install frequently used multimedia applications? [requires yay] (Y)es, (N)o, or (L)ist packages [y/n/l]:" yn
  
         case $yn in
-	[yY] ) echo -e "${NC}installing multimedia packages";
+	[yY] ) echo -e "${CYAN}installing multimedia packages${NC}";
                install_multimedia && break;;
-        [nN] ) echo -e "${RED}skipping multimedia stuff...${NC}"; break;;
+        [nN] ) echo -e "${YELLOW}skipping multimedia stuff...${NC}"; break;;
 	[lL] ) clear; echo -e "${CYAN}carla\nmpc\nmpd\nmpv\nncmpcpp\nqpwgraph\npavucontrol${NC}"; confirm_multimedia;;
-           * ) echo -e "${YELLOW}invalid response${NC}";;
+           * ) echo -e "${RED}invalid response${NC}";;
         esac
 done
 }
@@ -447,10 +447,10 @@ confirm_krita () {
 	read -p "would you like to install krita? [requires flatpak] [y/n]:" yn
 
 	case $yn in
-	    [yY] ) echo -e "${NC}installing krita";
+	    [yY] ) echo -e "${CYAN}installing krita${NC}";
 		   install_krita && break;;
-	    [nN] ) echo -e "${RED}skipping krita...${NC}"; break;;
-	    * ) echo -e "${YELLOW}invalid response${NC}";;
+	    [nN] ) echo -e "${YELLOW}skipping krita...${NC}"; break;;
+	    * ) echo -e "${RED}invalid response${NC}";;
 	esac
     done
 }
@@ -467,10 +467,10 @@ confirm_kdenlive () {
 	read -p "would you like to install kdenlive? [requires flatpak] [y/n]:" yn
 	
 	case $yn in
-	[yY] ) echo -e "${NC}installing kdenlive";
+	[yY] ) echo -e "${CYAN}installing kdenlive${NC}";
 		install_kdenlive && break;;
-	[nN] ) echo -e "${RED}skipping kdenlive...${NC}"; break;;
-	   * ) echo -e "${YELLOW}invalid response${NC}";;
+	[nN] ) echo -e "${YELLOW}skipping kdenlive...${NC}"; break;;
+	   * ) echo -e "${RED}invalid response${NC}";;
 	esac
 done
 }
@@ -486,10 +486,10 @@ confirm_ueberzug () {
     do
 	read -p "would you like to install ueberzug? (used by ncmpcpp to display album art) [requires pip] [y/n]:" yn
 	case $yn in
-	    [yY] ) echo -e "${NC}installing ueberzug";
+	    [yY] ) echo -e "${CYAN}installing ueberzug${NC}";
 		   install_ueberzug && break;;
-	    [nN] ) echo -e "${RED}skipping ueberzug...${NC}"; break;;
-	    * ) echo -e "${YELLOW}invalid response${NC}";;
+	    [nN] ) echo -e "${YELLOW}skipping ueberzug...${NC}"; break;;
+	    * ) echo -e "${RED}invalid response${NC}";;
 	esac
     done
 }
@@ -509,10 +509,10 @@ confirm_ncmpcpp-ueberzug () {
     do
 	read -p "would you like to install the ncmpcpp-ueberzug script? (displays album art in ncmpcpp) [requires pip+ueberzug installed] [y/n]:" yn
 	case $yn in
-	    [yY] ) echo -e "${NC}installing ncmpcpp-ueberzug";
+	    [yY] ) echo -e "${CYAN}installing ncmpcpp-ueberzug${NC}";
 		   install_ncmpcpp-ueberzug && break;;
-	    [nN] ) echo -e "${RED}skipping ncmpcpp-ueberzug...${NC}"; break;;
-	    * ) echo -e "${YELLOW}invalid response${NC}";;
+	    [nN] ) echo -e "${YELLOW}skipping ncmpcpp-ueberzug...${NC}"; break;;
+	    * ) echo -e "${RED}invalid response${NC}";;
 	esac
     done
 }
@@ -529,10 +529,10 @@ confirm_authy () {
         read -p "would you like to install authy? (two-factor authenticator) [requires yay] [y/n]:" yn
  
         case $yn in
-        [yY] ) echo -e "${NC}installing authy";
+        [yY] ) echo -e "${CYAN}installing authy${NC}";
                install_authy && break;;
-        [nN] ) echo -e "${RED}skipping authy...${NC}"; break;;
-           * ) echo -e "${YELLOW}invalid response${NC}";;
+        [nN] ) echo -e "${YELLOW}skipping authy...${NC}"; break;;
+           * ) echo -e "${RED}invalid response${NC}";;
         esac
 done
 }
@@ -549,10 +549,10 @@ confirm_keepassxc () {
 	read -p "would you like to install keepassxc? (password manager) [y/n]:" yn
 	
 	case $yn in
-	[yY] ) echo -e "${NC}installing keepassxc";
+	[yY] ) echo -e "${CYAN}installing keepassxc${NC}";
 	       install_keepassxc && break;;
-	[nN] ) echo -e "${RED}skipping keepassxc...${NC}"; break;;
-	   * ) echo -e "${YELLOW}invalid response${NC}";;
+	[nN] ) echo -e "${YELLOW}skipping keepassxc...${NC}"; break;;
+	   * ) echo -e "${RED}invalid response${NC}";;
 	esac
 done
 }
@@ -567,13 +567,13 @@ install_discord () {
 confirm_discord () {
 	while true
 	do
-	read -p "would you like to install discord?(remember to disable hardware acceleration in the voice/video settings!) [also installs mpd-rpc for discord. requires yay] [y/n]:" yn
+	read -p "would you like to install discord?(remember to disable hardware acceleration in the voice/video settings!) [also installs rich presence for mpd. requires yay] [y/n]:" yn
 
         case $yn in 
-	[yY] ) echo -e "${NC}installing discord";
+	[yY] ) echo -e "${CYAN}installing discord${NC}";
                install_discord && break;;
-        [nN] ) echo -e "${RED}skipping discord...${NC}"; break;;
-           * ) echo -e "${YELLOW}invalid response${NC}";;
+        [nN] ) echo -e "${YELLOW}skipping discord...${NC}"; break;;
+           * ) echo -e "${RED}invalid response${NC}";;
         esac
 done
 }
@@ -593,10 +593,10 @@ confirm_steam () {
 	read -p "would you like to install steam? [requires yay] [y/n]:" yn
 
         case $yn in
-	[yY] ) echo -e "${NC}installing steam";
+	[yY] ) echo -e "${CYAN}installing steam${NC}";
               install_steam && echo -e "${YELLOW}steam is installed. the directory ~/.local/share/Steam/compatibilitytools.d/ has been created."$'\n'"please download the glorious eggroll version of proton from github, and extract it in that directory.${NC}" && sleep 3 && break;;
-       [nN] ) echo -e "${RED}skipping steam...${NC}"; break;;
-          * ) echo -e "${YELLOW}invalid response${NC}";;
+       [nN] ) echo -e "${YELLOW}skipping steam...${NC}"; break;;
+          * ) echo -e "${RED}invalid response${NC}";;
         esac
 done
 }
@@ -613,10 +613,10 @@ confirm_heroic () {
         read -p "would you like to install the heroic games launcher? (open source launcher for epic games/gog) [requires yay] [y/n]:" yn
 
         case $yn in
-        [yY] ) echo -e "${NC}installing the heroic games launcher";
+        [yY] ) echo -e "${CYAN}installing the heroic games launcher${NC}";
                install_heroic && break;;
-        [nN] ) echo -e "${RED}skipping heroic...${NC}"; break;;
-           * ) echo -e "${YELLOW}invalid response${NC}";;
+        [nN] ) echo -e "${YELLOW}skipping heroic...${NC}"; break;;
+           * ) echo -e "${RED}invalid response${NC}";;
         esac
 done
 }
@@ -637,10 +637,10 @@ confirm_ani () {
         read -p "would you like to install ani-cli? (command line interface for anime streaming+downloading) [y/n]:" yn
 
         case $yn in
-	[yY] ) echo -e "${NC}installing ani-cli";
+	[yY] ) echo -e "${CYAN}installing ani-cli${NC}";
                install_ani && break;;
-        [nN] ) echo -e "${RED}skipping ani-cli...${NC}"; break;;
-           * ) echo -e "${YELLOW}invalid response${NC}";;
+        [nN] ) echo -e "${YELLOW}skipping ani-cli...${NC}"; break;;
+           * ) echo -e "${RED}invalid response${NC}";;
         esac
 done
 }
@@ -658,10 +658,10 @@ confirm_manga () {
         read -p "would you like to install manga-cli? (command line interface for reading manga) [requires yay] [y/n]:" yn
 
         case $yn in
-        [yY] ) echo -e "${NC}installing manga-cli";
+        [yY] ) echo -e "${CYAN}installing manga-cli${NC}";
                install_manga && break;;
-        [nN] ) echo -e "${RED}skipping manga-cli...${NC}"; break;;
-           * ) echo -e "${YELLOW}invalid response${NC}";;
+        [nN] ) echo -e "${YELLOW}skipping manga-cli...${NC}"; break;;
+           * ) echo -e "${RED}invalid response${NC}";;
         esac
 done
 }
@@ -678,10 +678,10 @@ confirm_trash () {
 	read -p "would you like to install trash-cli? (command line tool for emptying trash) [y/n]:" yn
 	
 	case $yn in
-	[yY] ) echo -e "${NC}installing trash-cli";
+	[yY] ) echo -e "${CYAN}installing trash-cli${NC}";
 	       install_trash && break;;
-	[nN] ) echo -e "${RED}skipping trash-cli...${NC}"; break;;
-	   * ) echo -e "${YELLOW}invalid response${NC}";;
+	[nN] ) echo -e "${YELLOW}skipping trash-cli...${NC}"; break;;
+	   * ) echo -e "${RED}invalid response${NC}";;
 	esac
 done
 }
@@ -698,10 +698,10 @@ confirm_slsk () {
         read -p "would you like to install soulseek? (a p2p file sharing service) [requires yay] [y/n]:" yn
 
         case $yn in
-        [yY] ) echo -e "${NC}installing slsk";
+        [yY] ) echo -e "${CYAN}installing slsk${NC}";
                install_slsk && break;;
-        [nN] ) echo -e "${RED}skipping slsk...${NC}"; break;;
-           * ) echo -e "${YELLOW}invalid response${NC}";;
+        [nN] ) echo -e "${YELLOW}skipping slsk...${NC}"; break;;
+           * ) echo -e "${RED}invalid response${NC}";;
         esac
 done
 }
@@ -718,10 +718,10 @@ confirm_bigly () {
         read -p "would you like to install biglybt? (a bittorrent client) [requires yay] [y/n]:" yn
 
         case $yn in
-        [yY] ) echo -e "${NC}installing biglybt";
+        [yY] ) echo -e "${CYAN}installing biglybt${NC}";
                install_bigly && break;;
-        [nN] ) echo -e "${RED}skipping bigly...${NC}"; break;;
-           * ) echo -e "${YELLOW}invalid response${NC}";;
+        [nN] ) echo -e "${YELLOW}skipping bigly...${NC}"; break;;
+           * ) echo -e "${RED}invalid response${NC}";;
         esac
 done
 }
@@ -738,10 +738,10 @@ confirm_wine () {
         read -p "would you like to install wine? (wine is not an emulator - it is a compatibility layer for linux allowing you to run windows software/games) [y/n]:" yn
 
         case $yn in
-        [yY] ) echo -e "${NC}installing wine";
+        [yY] ) echo -e "${CYAN}installing wine${NC}";
                install_wine && break;;
-        [nN] ) echo -e "${RED}skipping wine...${NC}"; break;;
-           * ) echo -e "${YELLOW}invalid response${NC}";;
+        [nN] ) echo -e "${YELLOW}skipping wine...${NC}"; break;;
+           * ) echo -e "${RED}invalid response${NC}";;
         esac
 done
 }
@@ -762,10 +762,10 @@ confirm_wineasio () {
         read -p "would you like to install wineasio? (an asio driver implementation for wine) [requires yay] [y/n]:" yn
 
         case $yn in
-        [yY] ) echo -e "${NC}installing wineasio";
+        [yY] ) echo -e "${CYAN}installing wineasio${NC}";
                install_wineasio && break;;
-        [nN] ) echo -e "${RED}skipping wineasio...${NC}"; break;;
-           * ) echo -e "${YELLOW}invalid response${NC}";;
+        [nN] ) echo -e "${YELLOW}skipping wineasio...${NC}"; break;;
+           * ) echo -e "${RED}invalid response${NC}";;
         esac
 done
 }
@@ -782,10 +782,10 @@ confirm_reaper () {
         read -p "would you like to install reaper? (a digital audio workstation) [y/n]:" yn
 
         case $yn in
-        [yY] ) echo -e "${NC}installing reaper";
+        [yY] ) echo -e "${CYAN}installing reaper${NC}";
                install_reaper && break;;
-        [nN] ) echo -e "${RED}skipping reaper...${NC}"; break;;
-           * ) echo -e "${YELLOW}invalid response${NC}";;
+        [nN] ) echo -e "${YELLOW}skipping reaper...${NC}"; break;;
+           * ) echo -e "${RED}invalid response${NC}";;
         esac
 done
 }
@@ -806,10 +806,10 @@ confirm_vm () {
         read -p "would you like to install virt-manager? (a frontend for kvm/qemu) [y/n]:" yn
 
         case $yn in
-        [yY] ) echo -e "${NC}installing virt-manager";
+        [yY] ) echo -e "${CYAN}installing virt-manager${NC}";
                install_vm && break;;
-        [nN] ) echo -e "${RED}skipping virt-manager...${NC}"; break;;
-           * ) echo -e "${YELLOW}invalid response${NC}";;
+        [nN] ) echo -e "${YELLOW}skipping virt-manager...${NC}"; break;;
+           * ) echo -e "${RED}invalid response${NC}";;
         esac
 done
 }
@@ -826,10 +826,10 @@ confirm_coolero () {
         read -p "would you like to install coolero? (gui to control aio coolers) [requires flatpak] [y/n]:" yn
 
         case $yn in
-        [yY] ) echo -e "${NC}installing coolero";
+        [yY] ) echo -e "${CYAN}installing coolero${NC}";
                install_coolero && break;;
-        [nN] ) echo -e "${RED}skipping coolero...${NC}"; break;;
-           * ) echo -e "${YELLOW}invalid response${NC}";;
+        [nN] ) echo -e "${YELLOW}skipping coolero...${NC}"; break;;
+           * ) echo -e "${RED}invalid response${NC}";;
         esac
 done
 }
@@ -846,10 +846,10 @@ confirm_openrgb () {
         read -p "would you like to install openrgb? (gui to control rgb components) [requires flatpak] [y/n]:" yn
 
         case $yn in
-        [yY] ) echo -e "${NC}installing openrgb";
+        [yY] ) echo -e "${CYAN}installing openrgb${NC}";
                install_openrgb && break;;
-        [nN] ) echo -e "${RED}skipping openrgb...${NC}"; break;;
-           * ) echo -e "${YELLOW}invalid response${NC}";;
+        [nN] ) echo -e "${YELLOW}skipping openrgb...${NC}"; break;;
+           * ) echo -e "${RED}invalid response${NC}";;
         esac
 done
 }
@@ -866,10 +866,10 @@ confirm_dolphin () {
 	read -p "would you like to install dolphin? (gamecube+wii emulator) [requires flatpak] [y/n]:" yn
 
 	case $yn in
-	[yY] ) echo -e "${NC}installing dolphin emulator";
+	[yY] ) echo -e "${CYAN}installing dolphin emulator${NC}";
                install_dolphin && break;;
-        [nN] ) echo -e "${RED}skipping dolphin emulator...${NC}"; break;;
-           * ) echo -e "${YELLOW}invalid response${NC}";;
+        [nN] ) echo -e "${YELLOW}skipping dolphin emulator...${NC}"; break;;
+           * ) echo -e "${RED}invalid response${NC}";;
         esac
 done
 }
@@ -883,13 +883,13 @@ install_mupen () {
 confirm_mupen () {
         while true
         do
-        read -p "would you like to install mupen64plus? (nintendo 64 emulator - gui made by rosalie241) [requires flatpak] [y/n]:" yn
+        read -p "would you like to install mupen64plus? (nintendo 64 emulator - gui made by rosalie241) [requires flatpak, or skip to install w/ yay] [y/n]:" yn
 
         case $yn in
-        [yY] ) echo -e "${NC}installing mupen64plus";
+        [yY] ) echo -e "${CYAN}installing mupen64plus${NC}";
                install_mupen && break;;
-        [nN] ) echo -e "${RED}skipping mupen64plus...${NC}"; break;;
-           * ) echo -e "${YELLOW}invalid response${NC}";;
+        [nN] ) echo -e "${YELLOW}skipping mupen64plus...${NC}"; break;;
+           * ) echo -e "${RED}invalid response${NC}";;
         esac
 done
 }
@@ -906,10 +906,10 @@ confirm_mupen_aur () {
 	read -p "would you like to install mupen64plus? (nintendo 64 emulator - gui made by rosalie241) [requires yay] [y/n]:" yn
 
 	case $yn in
-	    [yY] ) echo -e "${NC}installing mupen64plus";
+	    [yY] ) echo -e "${CYAN}installing mupen64plus${NC}";
 		   install_mupen_aur && break;;
-	    [nN] ) echo -e "${RED}skipping mupen64plus...${NC}"; break;;
-	    * ) echo -e "${YELLOW}invalid response${NC}";;
+	    [nN] ) echo -e "${YELLOW}skipping mupen64plus...${NC}"; break;;
+	    * ) echo -e "${RED}invalid response${NC}";;
 	esac
     done
 }
@@ -926,10 +926,10 @@ confirm_rpcs3 () {
         read -p "would you like to install rpcs3? (playstation 3 emulator) [requires yay] [y/n]:" yn
 
         case $yn in
-        [yY] ) echo -e "${NC}installing rpcs3";
+        [yY] ) echo -e "${CYAN}installing rpcs3${NC}";
                install_rpcs3 && break;;
-        [nN] ) echo -e "${RED}skipping rpcs3...${NC}"; break;;
-           * ) echo -e "${YELLOW}invalid response${NC}";;
+        [nN] ) echo -e "${YELLOW}skipping rpcs3...${NC}"; break;;
+           * ) echo -e "${RED}invalid response${NC}";;
         esac
 done
 }
@@ -946,10 +946,10 @@ confirm_pcsx2 () {
         read -p "would you like to install pcsx2? (playstation 2 emulator) [y/n]:" yn
 
         case $yn in
-        [yY] ) echo -e "${NC}installing pcsx2";
+        [yY] ) echo -e "${CYAN}installing pcsx2";
                install_pcsx2 && break;;
-        [nN] ) echo -e "${RED}skipping pcsx2...${NC}"; break;;
-           * ) echo -e "${YELLOW}invalid response${NC}";;
+        [nN] ) echo -e "${YELLOW}skipping pcsx2...${NC}"; break;;
+           * ) echo -e "${RED}invalid response${NC}";;
         esac
 done
 }
@@ -966,10 +966,10 @@ confirm_duckstation () {
         read -p "would you like to install duckstation? (playstation emulator) [requires flatpak] [y/n]:" yn
 
         case $yn in
-        [yY] ) echo -e "${NC}installing duckstation";
+        [yY] ) echo -e "${CYAN}installing duckstation${NC}";
                install_duckstation && break;;
-        [nN] ) echo -e "${RED}skipping duckstation...${NC}"; break;;
-           * ) echo -e "${YELLOW}invalid response${NC}";;
+        [nN] ) echo -e "${YELLOW}skipping duckstation...${NC}"; break;;
+           * ) echo -e "${RED}invalid response${NC}";;
         esac
 done
 }
@@ -986,10 +986,10 @@ confirm_flycast () {
         read -p "would you like to install flycast? (dreamcast emulator) [requires flatpak] [y/n]:" yn
         
 	case $yn in
-        [yY] ) echo -e "${NC}installing flycast";
+        [yY] ) echo -e "${CYAN}installing flycast${NC}";
                install_flycast && break;;
-        [nN] ) echo -e "${RED}skipping flycast...${NC}"; break;;
-           * ) echo -e "${YELLOW}invalid response${NC}";;
+        [nN] ) echo -e "${YELLOW}skipping flycast...${NC}"; break;;
+           * ) echo -e "${RED}invalid response${NC}";;
         esac
 done
 }
@@ -1002,7 +1002,7 @@ script_finish () {
 
         case $yn in
         [eE] ) echo -e "${RED}exiting KAARBS"; exit;;
-        [rR] ) echo -e "${YELLOW}re-running KAARBS${NC}"; script_init;;
+        [rR] ) clear; echo -e "${CYAN}re-running KAARBS${NC}"; script_init;;
            * ) echo -e "${YELLOW}invalid response${NC}";;
         esac 
 done
