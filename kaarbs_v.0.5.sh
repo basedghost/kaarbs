@@ -41,8 +41,8 @@ script_init () {
                   install_dep && break;;
            [eE] ) echo -e "${RED}exiting KAARBS"; exit;;
            [lL] ) clear; echo -e "rsync"$'\n'"noto-fonts"$'\n'"noto-fonts-cjk"$'\n'"noto-fonts-emoji"$'\n'"terminus-font"$'\n'"pacman-contrib"$'\n'"arandr"$'\n'"ufw"$'\n'"neofetch"$'\n'"qt5-base"$'\n'"qt5-svg"$'\n'"qt5-quickcontrols"$'\n'"qt5-quickcontrols2"$'\n'"qt5-graphicaleffects"$'\n'"qt5-multimedia"; script_init;;
-	   [sS] ) echo -e "${RED}skipping dependencies..."; break;;
-              * ) echo -e "${YELLOW}invalid response";;
+	   [sS] ) echo -e "${RED}skipping dependencies...${NC}"; break;;
+              * ) echo -e "${YELLOW}invalid response${NC}";;
         esac
 done
 }
@@ -61,9 +61,9 @@ confirm_nvidia () {
 	case $yn
 	in [yY] ) echo -e "${NC}installing nvidia settings";
 		  install_nvidia && break;;
-	   [nN] ) echo -e "${RED}skipping nvidia settings..."; break;;
-	   [sS] ) echo -e "${RED}skipping dependency..."; break;;
-	      * ) echo -e "${YELLOW}invalid response";;
+	   [nN] ) echo -e "${RED}skipping nvidia settings...${NC}"; break;;
+	   [sS] ) echo -e "${RED}skipping dependency...${NC}"; break;;
+	      * ) echo -e "${YELLOW}invalid response${NC}";;
 	esac
 done
 }
