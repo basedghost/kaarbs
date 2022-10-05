@@ -24,7 +24,7 @@ YELLOW='\033[0;33m'
 
 # Installs dependencies.
 install_dep () {
-	echo -e "${NC}proceeding to install necessary dependencies..." && sleep 2; 
+	echo -e "$(echo -e ${NC}proceeding to install necessary dependencies...)" && sleep 2; 
 	sudo pacman -S rsync noto-fonts noto-fonts-cjk noto-fonts-emoji terminus-font pacman-contrib arandr ufw neofetch qt5-base qt5-svg qt5-quickcontrols qt5-quickcontrols2 qt5-graphicaleffects qt5-multimedia zip unzip unrar p7zip ntfs-3g logrotate;
 	systemctl enable ufw;
 	sudo ufw enable
@@ -34,7 +34,7 @@ install_dep () {
 script_init () {
         while true
         do
-        read -rep "${NC}Welcome to ${YELLOW}KAARBS (Kojiros Automated Arch Ricing Bash Script)${NC}."$'\n'"This script gives you the option to install my preferred packages/configs."$'\n'"Before running this script, please make sure that you've read the README, and that your system is completely up to date."$'\n'"${CYAN}(P)roceed,(E)xit,(L)ist packages or (S)kip ahead if re-running script. [p/e/l/s]:" yn
+        read -p "$(echo -e ${NC}Welcome to ${YELLOW}KAARBS (Kojiros Automated Arch Ricing Bash Script)${NC}."$'\n'"This script gives you the option to install my preferred packages/configs."$'\n'"Before running this script, please make sure that you've read the README, and that your system is completely up to date."$'\n'"${CYAN}(P)roceed,(E)xit,(L)ist packages or (S)kip ahead if re-running script. [p/e/l/s]:)" yn
 
         case $yn
         in [pP] ) echo -e "${NC}installing dependencies";
