@@ -184,7 +184,7 @@ install_sddm () {
      makepkg -Ccsi;
      cd;
      echo -e "[Theme]"$'\n'"Current=sddm-lain-wired-theme">>sddm.conf;
-     sudo cp sddm.conf /etc/sddm.conf;;
+     sudo cp sddm.conf /etc/sddm.conf
 }
 
 # Confirmation of sddm installation.
