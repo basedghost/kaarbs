@@ -1,7 +1,7 @@
 # kaarbs
 kojiros automated arch ricing bash script
 
-This script is intended to be a quick/lazy way of auto-installing all the packages I normally would but with the option to pick and choose what you want to install. This is mainly for my personal use, however others could use it. Because of my lack of technical knowledge it does still require a *slight* amount of tinkering afterwards, but this should do for now.
+This script is intended to be a quick/lazy way of auto-installing all the packages I normally would but with the option to pick and choose what you want to install. This is mainly for my personal use, however others could use it (at their own risk). Because of my lack of technical knowledge it does still require a *slight* amount of tinkering afterwards, but this should do for now.
 
 # Instructions:
 1. Clone the repo + move the script to your home folder:
@@ -17,7 +17,7 @@ chmod +x kaarbs.sh
 ./kaarbs.sh
 ```
 
-This script has been tested on a fresh [Arch Linux](https://archlinux.org/download/) install (using the archinstall script + multilib repo + networkmanager + pipewire + xfce4 DE)
+This script has been tested on a fresh [Arch Linux](https://archlinux.org/download/) install (using the archinstall script + multilib repo + networkmanager + pipewire)
 
 This script pulls dotfiles from my [personal repository](https://github.com/basedghost/dotfiles/).
 There is a [complete list of packages](PACKAGES.md) that this script gives you the choice of installing, if you'd like to check before running it.
@@ -34,12 +34,6 @@ Here's a couple of things you might want to do after using kaarbs:
 "Defaults lecture_file=~/lecture"
 ```
 - If you'd like to use animated cursors, use the program lxappearance to choose between them.
-- If you have [LightDM](https://wiki.archlinux.org/title/Lightdm) as your display manager and would like to use the [custom login theme](https://github.com/manilarome/lightdm-webkit2-theme-glorious), edit your `/etc/lightdm/lightdm.conf` file and add this line:
-```
-greeter-session=lightdm-webkit2-greeter
-```
-You can configure the theme further by editing `/etc/lightdm/lightdm-webkit2-greeter.conf`.
-
 - If you installed Steam and would like to use Proton-GE, download the latest release [here](https://github.com/GloriousEggroll/proton-ge-custom/releases/latest/) and extract it to this path:
 `~/.local/share/Steam/compatibilitytools.d/`
 - If you installed virt-manager, you must edit your `/etc/libvirt/libvirtd.conf` and uncomment `unix_sock_group` `unix_sock_ro_perms` and `unix_sock_rw_perms`.
