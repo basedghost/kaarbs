@@ -6,7 +6,7 @@ This script is intended to be a quick/lazy way of auto-installing all the packag
 # Instructions:
 1. Clone the repo + move the script to your home folder:
 ```
-git clone https://github.com/basedghost/kaarbs/ && cd kaarbs;mv kaarbs_*.sh ~/kaarbs.sh; cd ..
+git clone https://github.com/basedghost/kaarbs/ && mv kaarbs/kaarbs_*.sh kaarbs.sh
 ```
 2. Make the script executable:
 ```
