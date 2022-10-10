@@ -475,6 +475,26 @@ confirm_kdenlive () {
 done
 }
 
+# Installs picard.
+install_picard () {
+	sudo pacman -S picard
+}
+
+# Confirmation for picard.
+confirm_picard () {
+	while true
+	do
+	read -p "would you like to install picard? (gui for managing audio metadata) [y/n]:" yn
+	
+	case $yn in
+	[yY] ) echo -e "${CYAN}installing picard${NC}";
+		install_picard && break;;
+	[nN] ) echo -e "${YELLOW}skipping picard...${NC}"; break;;
+	   * ) echo -e "${RED}invalid response${NC}";;
+	   esac
+done
+}
+
 # Installs ueberzug.
 install_ueberzug () {
     sudo pip3 install ueberzug
@@ -1048,6 +1068,9 @@ confirm_krita
 
 # Kdenlive
 confirm_kdenlive
+
+# Picard
+confirm_picard
 
 # Ueberzug (used to display album art in ncmpcpp)
 confirm_ueberzug
