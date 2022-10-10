@@ -64,6 +64,7 @@ For those of you wondering what the script gives you the choice of installing, h
 - abgate.lv2 [yay]
 - krita [flatpak]
 - kdenlive [flatpak]
+- picard
 - ueberzug [pip]
 - ncmpcpp-ueberzug [pip]
 - authy-electron [yay]
