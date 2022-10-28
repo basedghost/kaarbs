@@ -537,26 +537,6 @@ confirm_ncmpcpp-ueberzug () {
     done
 }
 
-# Installs authy 2fa.
-install_authy () {
-	yay -S authy-electron
-}
-
-# Confirmation for authy.
-confirm_authy () {
-	while true
-        do
-        read -p "would you like to install authy? (two-factor authenticator) [requires yay] [y/n]:" yn
- 
-        case $yn in
-        [yY] ) echo -e "${CYAN}installing authy${NC}";
-               install_authy && break;;
-        [nN] ) echo -e "${YELLOW}skipping authy...${NC}"; break;;
-           * ) echo -e "${RED}invalid response${NC}";;
-        esac
-done
-}
-
 # Installs keepassxc.
 install_keepassxc () {
 	sudo pacman -S keepassxc
@@ -706,21 +686,21 @@ confirm_trash () {
 done
 }
 
-# Installs soulseek - a p2p file sharing service. 
+# Installs nicotine+ - a foss client for soulseek, the p2p file sharing service. 
 install_slsk () {
-	yay -S soulseekqt
+	sudo pacman -S nicotine+
 }
 
-# Confirmation for slsk.
+# Confirmation for nicotine+.
 confirm_slsk () {
         while true
         do
-        read -p "would you like to install soulseek? (a p2p file sharing service) [requires yay] [y/n]:" yn
+        read -p "would you like to install nicotine+? (a foss client for soulseek, a p2p file sharing service) [y/n]:" yn
 
         case $yn in
-        [yY] ) echo -e "${CYAN}installing slsk${NC}";
+        [yY] ) echo -e "${CYAN}installing nicotine+${NC}";
                install_slsk && break;;
-        [nN] ) echo -e "${YELLOW}skipping slsk...${NC}"; break;;
+        [nN] ) echo -e "${YELLOW}skipping nicotine+...${NC}"; break;;
            * ) echo -e "${RED}invalid response${NC}";;
         esac
 done
@@ -799,7 +779,7 @@ install_reaper () {
 confirm_reaper () {
         while true
         do
-        read -p "would you like to install reaper? (a digital audio workstation) [y/n]:" yn
+        read -p "would you like to install reaper? (a digital audio workstation) [requires yay] [y/n]:" yn
 
         case $yn in
         [yY] ) echo -e "${CYAN}installing reaper${NC}";
