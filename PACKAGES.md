@@ -39,7 +39,7 @@ For those of you wondering what the script gives you the choice of installing, h
 - imagemagick
 - conky
 - sddm
-- sddm-lain-wired-theme
+- sddm-lain-wired-theme [yay]
 - network-manager-applet [yay]
 
 ## My custom configs/theme:
