@@ -67,7 +67,6 @@ For those of you wondering what the script gives you the choice of installing, h
 - picard
 - ueberzug [pip]
 - ncmpcpp-ueberzug [pip]
-- authy-electron [yay]
 - keepassxc
 - discord
 - mpd-discord-rpc-git [yay]
