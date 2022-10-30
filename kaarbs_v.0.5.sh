@@ -221,7 +221,6 @@ install_configs () {
     sudo chmod +x awesome_display_layout.sh;
     sudo chmod +x graal;
     sudo chmod +x lock.sh;
-    sudo chmod +x matrix.sh;
     sudo chmod +x noisegate;
     sudo chmod +x nrestore.sh;
     sudo chmod +x pwrestart;
@@ -236,7 +235,8 @@ install_configs () {
 # Clones the local directory
     rsync -vrP .local/ ~/.local/
     
-# Bashrc
+# Bashrc (preserves a copy of your current bashrc)
+    mv ~/.bashrc ~/.bashrc.backup
     mv bashrc ~/.bashrc
 
 # Gnu emacs config
@@ -1091,7 +1091,7 @@ confirm_manga
 # Trash-cli
 confirm_trash
 
-# Soulseek [yay]
+# Nicotine+
 confirm_slsk
  
 # Biglybt [yay]
