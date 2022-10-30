@@ -16,6 +16,10 @@ chmod +x kaarbs.sh
 ```
 ./kaarbs.sh
 ```
+(Recommended) If you would like to view the contents of the script before executing it:
+```
+cat kaarbs.sh
+```
 
 This script has been tested on a fresh [Arch Linux](https://archlinux.org/download/) install (using the archinstall script + multilib repo + networkmanager + pipewire)
 
@@ -37,4 +41,4 @@ Here's a couple of things you might want to do after using kaarbs:
 - If you installed Steam and would like to use Proton-GE, download the latest release [here](https://github.com/GloriousEggroll/proton-ge-custom/releases/latest/) and extract it to this path:
 `~/.local/share/Steam/compatibilitytools.d/`
 - If you installed virt-manager, you must edit your `/etc/libvirt/libvirtd.conf` and uncomment `unix_sock_group` `unix_sock_ro_perms` and `unix_sock_rw_perms`.
-Then run ```sudo usermod -aG libvirt $(whoami)``` and reboot ```systemctl reboot```
+Then run ```sudo usermod -aG libvirt $(whoami)``` and reboot.
