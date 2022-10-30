@@ -78,7 +78,7 @@ For those of you wondering what the script gives you the choice of installing, h
 - zathura, zathura-cb, zathura-pdf-poppler
 - manga-cli-git [yay]
 - trash-cli
-- soulseek [yay]
+- nicotine+
 - biglybt [yay]
 - wine, winetricks
 - realtime-privileges
