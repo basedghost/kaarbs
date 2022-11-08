@@ -69,6 +69,7 @@ For those of you wondering what the script gives you the choice of installing, h
 - ncmpcpp-ueberzug [pip]
 - keepassxc
 - discord
+- discord-screenaudio
 - mpd-discord-rpc-git [yay]
 - gamemode
 - steam, mangohud [yay]
