@@ -26,8 +26,8 @@ This script has been tested on a fresh [Arch Linux](https://archlinux.org/downlo
 This script pulls dotfiles from my [personal repository](https://github.com/basedghost/dotfiles/).
 There is a [complete list of packages](PACKAGES.md) that this script gives you the choice of installing, if you'd like to check before running it.
 
-**A screenshot of the test:
-**![screenshot](https://user-images.githubusercontent.com/111021033/200684659-681723c1-ddcb-43f0-a3fd-d295df2ae991.png)
+**A screenshot of the test:**
+![screenshot](https://user-images.githubusercontent.com/111021033/200684659-681723c1-ddcb-43f0-a3fd-d295df2ae991.png)
 
 ## post-script tweaks
 
