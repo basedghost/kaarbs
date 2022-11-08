@@ -21,7 +21,7 @@ chmod +x kaarbs.sh
 cat kaarbs.sh
 ```
 
-This script has been tested on a fresh [Arch Linux](https://archlinux.org/download/) install (using the archinstall script + multilib repo + networkmanager + pipewire)
+This script has been tested on a fresh [Arch Linux](https://archlinux.org/download/) install in QEMU-KVM and on a Thinkpad T500 (using the archinstall script + multilib repo + networkmanager + pipewire)
 
 This script pulls dotfiles from my [personal repository](https://github.com/basedghost/dotfiles/).
 There is a [complete list of packages](PACKAGES.md) that this script gives you the choice of installing, if you'd like to check before running it.
