@@ -334,12 +334,13 @@ install_omb () {
      sudo pacman -S curl;
      bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
      sudo echo "colorscript random">>.bashrc
+     mv dotfiles/.oh-my-bash/custom/aliases/custom.aliases.sh ~/.oh-my-bash/custom/aliases/custom.aliases.sh
 }
 
 confirm_omb () {
     while true
         do
-        read -p "would you like to install oh-my-bash (custom bash themes)? [y/n]:" yn
+        read -p "would you like to install oh-my-bash? (custom bash themes) [this will end kaarbs. you must re-run kaarbs after oh-my-bash is installed to continue.] [y/n]:" yn
 
         case $yn in
         [yY] ) echo -e "${CYAN}installing oh my bash${NC}";
