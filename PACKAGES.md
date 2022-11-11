@@ -2,6 +2,7 @@
 For those of you wondering what the script gives you the choice of installing, here is a complete list:
 ## Dependencies:
 - rsync
+- wget
 - noto-fonts, noto-fonts-cjk, noto-fonts-emoji
 - terminus-font
 - pacman-contrib
@@ -73,6 +74,7 @@ For those of you wondering what the script gives you the choice of installing, h
 - mpd-discord-rpc-git [yay]
 - gamemode
 - steam, mangohud [yay]
+- proton-ge-custom
 - heroic-games-launcher [yay]
 - axel, curl, mpv, openssl, ffmpeg, ani-cli
 - zathura, zathura-cb, zathura-pdf-poppler
