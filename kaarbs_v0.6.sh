@@ -599,12 +599,15 @@ confirm_discord_screenaudio () {
 	esac
     done
 }
-# Installs steam + gamemode & mangohud.
+# Installs steam, gamemode, mangohud, and the latest proton-ge release.
 install_steam () {
     sudo pacman -S gamemode;
     yay -S steam mangohud;
-    mkdir ~/.local/share/Steam/compatibilitytools.d/
-    
+    mkdir ~/.local/share/Steam/compatibilitytools.d/;
+    wget https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton7-41/GE-Proton7-41.tar.gz;
+    tar xzvf GE-Proton7-41.tar.gz;
+    mv GE-Proton7-41/ .local/share/Steam/compatibilitytools.d/;
+    rm GE-Proton7-41.tar.gz
 }
 
 # Confirmation for steam.
@@ -615,7 +618,7 @@ confirm_steam () {
 
         case $yn in
 	[yY] ) echo -e "${CYAN}installing steam${NC}";
-              install_steam && echo -e "${YELLOW}steam is installed. the directory ~/.local/share/Steam/compatibilitytools.d/ has been created."$'\n'"please download the glorious eggroll version of proton from github, and extract it in that directory.${NC}" && sleep 3 && break;;
+              install_steam && echo -e "${YELLOW}steam is installed.${NC}" && break;;
        [nN] ) echo -e "${YELLOW}skipping steam...${NC}"; break;;
           * ) echo -e "${RED}invalid response${NC}";;
         esac
