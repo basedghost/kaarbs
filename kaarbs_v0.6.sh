@@ -24,7 +24,7 @@ YELLOW='\033[0;33m'
 # Installs dependencies.
 install_dep () {
 	echo -e "${CYAN}proceeding to install necessary dependencies...${NC}" && sleep 2; 
-	sudo pacman -S rsync noto-fonts noto-fonts-cjk noto-fonts-emoji terminus-font pacman-contrib arandr ufw neofetch qt5-base qt5-svg qt5-quickcontrols qt5-quickcontrols2 qt5-graphicaleffects qt5-multimedia zip unzip unrar p7zip ntfs-3g logrotate;
+	sudo pacman -S rsync wget noto-fonts noto-fonts-cjk noto-fonts-emoji terminus-font pacman-contrib arandr ufw neofetch qt5-base qt5-svg qt5-quickcontrols qt5-quickcontrols2 qt5-graphicaleffects qt5-multimedia zip unzip unrar p7zip ntfs-3g logrotate;
 	systemctl enable ufw;
 	sudo ufw enable
 }
