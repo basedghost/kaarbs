@@ -38,7 +38,5 @@ Here's a couple of things you might want to do after using kaarbs:
 "Defaults lecture_file=~/lecture"
 ```
 - If you'd like to use animated cursors, use the program lxappearance to choose between them.
-- If you installed Steam and would like to use Proton-GE, download the latest release [here](https://github.com/GloriousEggroll/proton-ge-custom/releases/latest/) and extract it to this path:
-`~/.local/share/Steam/compatibilitytools.d/`
 - If you installed virt-manager, you must edit your `/etc/libvirt/libvirtd.conf` and uncomment `unix_sock_group` `unix_sock_ro_perms` and `unix_sock_rw_perms`.
 Then run ```sudo usermod -aG libvirt $(whoami)``` and reboot.
