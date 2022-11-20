@@ -40,3 +40,7 @@ Here's a couple of things you might want to do after using kaarbs:
 - If you'd like to use animated cursors, use the program lxappearance to choose between them.
 - If you installed virt-manager, you must edit your `/etc/libvirt/libvirtd.conf` and uncomment `unix_sock_group` `unix_sock_ro_perms` and `unix_sock_rw_perms`.
 Then run ```sudo usermod -aG libvirt $(whoami)``` and reboot.
+
+## Issues
+If any issues with certain packages arise, they will be noted here.
+- Picom has recently been leaking both host and gpu memory. It has been temporarily disabled from the script.
