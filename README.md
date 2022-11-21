@@ -29,6 +29,8 @@ There is a [complete list of packages](PACKAGES.md) that this script gives you t
 **A screenshot of the test:**
 ![screenshot](https://user-images.githubusercontent.com/111021033/200684659-681723c1-ddcb-43f0-a3fd-d295df2ae991.png)
 
+There is a [systemd-free fork](https://github.com/basedghost/kaarbs-openrc) of this script if you are using the OpenRC init system (or would prefer it).
+
 ## post-script tweaks
 
 Here's a couple of things you might want to do after using kaarbs:
