@@ -152,7 +152,7 @@ confirm_pip () {
 
 # Installs the awesome window manager (and other packages to fill in the gaps)
 install_awesomewm () {
-	sudo pacman -S awesome nitrogen picom xorg-xwininfo xorg-xprop xscreensaver dmenu polkit-gnome kitty unclutter lxappearance pavucontrol pcmanfm scrot feh imagemagick conky;
+	sudo pacman -S awesome nitrogen picom xorg-xwininfo xorg-xprop xscreensaver dmenu polkit-gnome kitty unclutter lxappearance pavucontrol pcmanfm scrot sxiv imagemagick conky;
 	mkdir ~/.config/awesome/;
 	git clone --recurse-submodules --remote-submodules --depth 1 -j 2 https://github.com/lcpz/awesome-copycats.git;
 	mv -bv awesome-copycats/{*,.[^.]*} ~/.config/awesome;rm -rf awesome-copycats;
@@ -169,7 +169,7 @@ confirm_awesomewm () {
 	[yY] ) echo -e "${CYAN}installing awesomeWM + other packages to fill in the gaps.${NC}";
                install_awesomewm && break;;
         [nN] ) echo -e "${YELLOW}skipping awesomeWM...${NC}"; break;;
-        [lL] ) clear; echo -e "${CYAN}awesome\nnitrogen\npicom\nxorg-xwininfo\nxorg-xprop\nxscreensaver\ndmenu\npolkit-gnome\nkitty\nunclutter\nlxappearance\npavucontrol\npcmanfm\nscrot\nfeh\nimagemagick\nconky${NC}"; confirm_awesomewm;;
+        [lL] ) clear; echo -e "${CYAN}awesome\nnitrogen\npicom\nxorg-xwininfo\nxorg-xprop\nxscreensaver\ndmenu\npolkit-gnome\nkitty\nunclutter\nlxappearance\npavucontrol\npcmanfm\nscrot\nsxiv\nimagemagick\nconky${NC}"; confirm_awesomewm;;
            * ) echo -e "${RED}invalid response${NC}";;
         esac
 done
