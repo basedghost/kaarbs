@@ -177,7 +177,7 @@ done
 
 # Installs simple desktop display manager + a custom lain theme.
 install_sddm () {
-     sudo pacman -S sddm;
+     sudo pacman -S sddm gst-plugins-good;
      systemctl enable sddm;
      git clone https://aur.archlinux.org/sddm-lain-wired-theme.git;
      cd sddm-lain-wired-theme;
@@ -332,6 +332,7 @@ done
 
 # Installs oh-my-bash, custom themes for bash shell.
 install_omb () {
+	cp .bashrc .bashrc.omb_backup
      sudo pacman -S curl;
      bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
      sudo echo "colorscript random">>.bashrc
@@ -352,7 +353,7 @@ confirm_omb () {
 done
 }
 
-# Installs my personal browser of choice, libreWolf.
+# Installs my personal browser of choice, librewolf.
 install_librewolf () {
 	yay -S librewolf-bin
 }
