@@ -560,27 +560,6 @@ confirm_keepassxc () {
 done
 }
 
-# Installs discord + rich presence for mpd.
-install_discord () {
-	sudo pacman -S discord;
-	yay -S mpd-discord-rpc-git
-}
-
-# Confirmation for discord.
-confirm_discord () {
-	while true
-	do
-	read -p "would you like to install discord?(remember to disable hardware acceleration in the voice/video settings!) [also installs rich presence for mpd. requires yay] [y/n]:" yn
-
-        case $yn in 
-	[yY] ) echo -e "${CYAN}installing discord${NC}";
-               install_discord && break;;
-        [nN] ) echo -e "${YELLOW}skipping discord...${NC}"; break;;
-           * ) echo -e "${RED}invalid response${NC}";;
-        esac
-done
-}
-
 # Installs discord client that includes screensharing with audio.
 install_discord_screenaudio () {
     flatpak install de.shorsh.discord-screenaudio
@@ -605,7 +584,7 @@ install_steam () {
     sudo pacman -S gamemode;
     yay -S steam mangohud;
     mkdir ~/.local/share/Steam/compatibilitytools.d/;
-    wget https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton7-41/GE-Proton7-41.tar.gz;
+    wget https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton7-42/GE-Proton7-42.tar.gz;
     tar xzvf GE-Proton7-41.tar.gz;
     mv GE-Proton7-41/ .local/share/Steam/compatibilitytools.d/;
     rm GE-Proton7-41.tar.gz
@@ -1094,9 +1073,6 @@ confirm_emacs
 
 # Keepassxc
 confirm_keepassxc
-
-# Discord client + mpd-discord-rpc-git [yay]
-confirm_discord
 
 # Discord client that includes screensharing with audio
 confirm_discord_screenaudio
