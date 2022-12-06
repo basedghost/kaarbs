@@ -45,4 +45,4 @@ Then run ```sudo usermod -aG libvirt $(whoami)``` and reboot.
 
 ## Issues
 If any issues with certain packages arise, they will be noted here.
-- Picom has recently been leaking both host and gpu memory. It has been temporarily disabled from the script.
+- Nothing to report here!
