@@ -12,13 +12,13 @@ git clone https://github.com/basedghost/kaarbs/ && mv kaarbs/kaarbs_*.sh kaarbs.
 ```
 chmod +x kaarbs.sh
 ```
+(Optional) If you would like to view the contents of the script before executing it:
+```
+cat kaarbs.sh
+```
 3. Run the script:
 ```
 ./kaarbs.sh
-```
-(Recommended) If you would like to view the contents of the script before executing it:
-```
-cat kaarbs.sh
 ```
 
 This script has been tested on a fresh [Arch Linux](https://archlinux.org/download/) install in QEMU-KVM and on a Thinkpad T500 (using the archinstall script + multilib repo + networkmanager + pipewire)
