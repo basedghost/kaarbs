@@ -584,10 +584,10 @@ install_steam () {
     sudo pacman -S gamemode;
     yay -S steam mangohud;
     mkdir ~/.local/share/Steam/compatibilitytools.d/;
-    wget https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton7-42/GE-Proton7-42.tar.gz;
-    tar xzvf GE-Proton7-41.tar.gz;
-    mv GE-Proton7-41/ .local/share/Steam/compatibilitytools.d/;
-    rm GE-Proton7-41.tar.gz
+    wget https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton7-43/GE-Proton7-43.tar.gz;
+    tar xzvf GE-Proton7-43.tar.gz;
+    mv GE-Proton7-43/ .local/share/Steam/compatibilitytools.d/;
+    rm GE-Proton7-43.tar.gz
 }
 
 # Confirmation for steam.
